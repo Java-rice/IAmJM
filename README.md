@@ -1,2 +1,0 @@
-# IAmJM
-Personal Website
