@@ -7,7 +7,7 @@ import Navigation from "../../components/navigation/Navigation";
 
 const Home = () => {
   return (
-    <div className="px-[10%] gap-[5%] font-rubik flex lg:flex-row justify-center items-center flex-col-reverse max-h-screen py-auto">
+    <div className="px-[10%] gap-[5%] font-rubik flex lg:flex-row justify-center items-center flex-col-reverse min-h-screen py-auto">
       <div className="lg:w-[35%] w-[100%] m-auto lg:text-left justify-center flex flex-col gap-4 text-center">
         <h2 className="text-5xl text-[#F5B301]">Hello, Its me</h2>
         <h1 className="font-extrabold text-6xl text-[rgb(253,253,253)]">John Mark</h1>
