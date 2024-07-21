@@ -6,7 +6,7 @@ import TransitionWrapper from "./components/transition/TransitionWrapper";
 
 function App() {
   return (
-    <div className="bg-[#3B4046] min-h-screen min-w-screen">
+    <div className="bg-[#1E2329] min-h-screen min-w-screen">
       <Name></Name>
       <Router>
         <TransitionWrapper>
