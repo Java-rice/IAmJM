@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Name from "./components/logo/Name";
 import Home from "./pages/home/Home";
+import About from "./pages/about/About"
 import TransitionWrapper from "./components/transition/TransitionWrapper";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <TransitionWrapper>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </TransitionWrapper>
       </Router>
