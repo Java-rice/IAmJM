@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="bg-[#1E2329] min-h-screen min-w-screen">
       <Name></Name>
-      <Router>
+      <Router basename="/IAmJM">
         <TransitionWrapper>
           <Routes>
             <Route path="/" element={<Home />} />
