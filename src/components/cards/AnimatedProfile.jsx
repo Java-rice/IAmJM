@@ -3,7 +3,7 @@ import profile from '../../assets/profile.png';
 
 const AnimatedProfile = () => {
   return (
-    <div className="w-[55%] relative">
+    <div className="lg:w-[55%] w-[100%] relative">
       {/* Top Bar */}
       <div className="w-[100%] h-7 bg-[#FED154] absolute top-0 animate-slide-right"></div>
       <div className="relative">

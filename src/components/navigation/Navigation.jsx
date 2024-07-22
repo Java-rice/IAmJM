@@ -14,14 +14,14 @@ import Blog from "../../assets/Blog.png";
 
 const Navigation = () => {
   return (
-    <div className="h-[80%] py-12 relative">
-      <div className="h-[100%] w-[80%] absolute top-0 left-8 z-0 border-2 py-20 border-[#F5B301]"> </div>
-      <nav className="h-[40%] flex flex-col gap-10 z-10 justify-around relative">
-        <Link to="/"><img src={AHome}/></Link>
-        <Link to="/about"><img src={AAbout}/></Link>
-        <Link to="/projects"><img src={AProjects}/></Link>
-        <Link to="/contact"><img src={AContact}/></Link>
-        <Link to="/blog"><img src={ABlog}/></Link>
+    <div className="h-auto py-10 fixed lg:top-48 lg:my-auto lg:right-20 bottom-10 mx-auto">
+      <div className="lg:h-[80%] h-[40%] lg:w-[80%] w-[120%] absolute -right-12 bottom-3 lg:bottom-36 lg:left-8 z-0 border-2 lg:py-20 border-[#F5B301]"> </div>
+      <nav className="h-[40%] flex flex-row lg:flex-col gap-10 z-10 justify-around relative">
+        <Link to="/"><img src={AHome} className='w-14 h-14'/></Link>
+        <Link to="/about"><img src={AAbout} className='w-14 h-14'/></Link>
+        <Link to="/projects"><img src={AProjects} className='w-14 h-14'/></Link>
+        <Link to="/contact"><img src={AContact} className='w-14 h-14'/></Link>
+        <Link to="/blog"><img src={ABlog} className='w-14 h-14'/></Link>
       </nav>
     </div>
   )
