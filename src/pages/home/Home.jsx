@@ -27,7 +27,6 @@ const Home = () => {
         </div>
       </div>
       <AnimatedProfile></AnimatedProfile>
-      <Navigation></Navigation>
     </div>
 
   );
