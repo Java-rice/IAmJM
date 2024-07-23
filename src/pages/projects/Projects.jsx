@@ -10,7 +10,6 @@ const Projects = () => {
         </h1>
       </div>
       <div></div>
-      <Navigation></Navigation>
     </div>
   );
 };

@@ -7,7 +7,6 @@ const Contacts = () => {
       <div className="w-[100%] text-center">
         <h1 className="font-bold text-4xl">CONTACT ME</h1>
       </div>
-      <Navigation></Navigation>
     </div>
   );
 };
