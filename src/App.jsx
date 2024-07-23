@@ -14,7 +14,9 @@ function App() {
     <div className="bg-[#1E2329] min-h-screen min-w-screen">
       <Name />
       <Navigation></Navigation>
-      <Outlet/>
+      <TransitionWrapper>
+        <Outlet/>
+      </TransitionWrapper>
     </div>
   );
 }

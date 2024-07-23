@@ -7,6 +7,7 @@ import About from './pages/about/About.jsx'
 import Contacts from './pages/contacts/Contacts.jsx'
 import Blogs from './pages/blog/Blogs.jsx'
 import Projects from './pages/projects/Projects.jsx'
+import TransitionWrapper from './components/transition/TransitionWrapper.jsx'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
