@@ -11,27 +11,27 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: "/IAmJm/",
+    path: "/iamjm/",
     element: <App />,
     children: [
       {
-        path: "/IAmJm/",
+        path: "/iamjm/",
         element: <Home />,
       },
       {
-        path: "/IAmJm/about",
+        path: "/iamjm/about",
         element: <About />,
       },
       {
-        path: "/IAmJm/projects",
+        path: "/iamjm/projects",
         element: <Projects />,
       },
       {
-        path: "/IAmJm/contacts",
+        path: "/iamjm/contacts",
         element: <Contacts />,
       },
       {
-        path: "/IAmJm/blogs",
+        path: "/iamjm/blogs",
         element: <Blogs />,
       },
     ],
