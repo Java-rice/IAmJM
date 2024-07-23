@@ -4,6 +4,9 @@ import Name from "./components/logo/Name";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import TransitionWrapper from "./components/transition/TransitionWrapper";
+import Contacts from "./pages/contacts/Contacts";
+import Blogs from "./pages/blog/Blogs";
+import Projects from "./pages/projects/Projects";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contacts />} />
+            <Route path="/blog" element={<Blogs />} />
           </Routes>
         </TransitionWrapper>
       </Router>
