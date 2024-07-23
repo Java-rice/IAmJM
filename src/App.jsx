@@ -11,7 +11,7 @@ import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
-    <div className="bg-[#1E2329] min-h-screen min-w-screen">
+    <div className="bg-[#1E2329] min-h-screen  min-w-screen">
       <Name />
       <Navigation></Navigation>
       <TransitionWrapper>
