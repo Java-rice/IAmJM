@@ -8,6 +8,7 @@ import Contacts from "./pages/contacts/Contacts";
 import Blogs from "./pages/blog/Blogs";
 import Projects from "./pages/projects/Projects";
 import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <TransitionWrapper>
         <Outlet/>
       </TransitionWrapper>
+      <Footer></Footer>
     </div>
   );
 }
