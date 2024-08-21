@@ -16,11 +16,11 @@ const Navigation = () => {
   return (
     <div className="fixed top-48 right-20 py-8 border border-[#F5B301]">
       <nav className="flex flex-row relative right-8 lg:flex-col gap-10 z-10 justify-around">
-        <Link to="/IAmJm/"><img src={AHome} className='w-14 h-14'/></Link>
-        <Link to="/IAmJm/about"><img src={AAbout} className='w-14 h-14'/></Link>
-        <Link to="/IAmJm/projects"><img src={AProjects} className='w-14 h-14'/></Link>
-        <Link to="/IAmJm/contacts"><img src={AContact} className='w-14 h-14'/></Link>
-        <Link to="/IAmJm/blogs"><img src={ABlog} className='w-14 h-14'/></Link>
+        <Link to="/IAmJM/"><img src={AHome} className='w-14 h-14'/></Link>
+        <Link to="/IAmJM/about"><img src={AAbout} className='w-14 h-14'/></Link>
+        <Link to="/IAmJM/projects"><img src={AProjects} className='w-14 h-14'/></Link>
+        <Link to="/IAmJM/contacts"><img src={AContact} className='w-14 h-14'/></Link>
+        <Link to="/IAmJM/blogs"><img src={ABlog} className='w-14 h-14'/></Link>
       </nav>
     </div>
   )
