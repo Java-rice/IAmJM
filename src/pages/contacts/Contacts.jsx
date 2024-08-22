@@ -20,7 +20,7 @@ const Contacts = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <p className="text-[#FDFDFD] leading-8 text-l text-justify">
+          <p className="text-[#FDFDFD] leading-8 text-base text-justify">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur atque eligendi laboriosam natus dolores, suscipit magni maiores, neque, error similique eius quod tempora repellat laudantium modi autem sapiente! Quas repellat omnis quibusdam dolor ab recusandae, laborum quisquam reiciendis eligendi nesciunt rerum nulla, repudiandae fuga obcaecati sed sequi quidem quam doloribus.
           </p>
         </div>

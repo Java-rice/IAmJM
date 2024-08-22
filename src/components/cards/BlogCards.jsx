@@ -10,13 +10,13 @@ const BlogCards = ({title, date, description, img}) => {
         </div>
         <div className="lg:col-span-2 mt-4 text-xl flex flex-col gap-4 lg:gap-2 justify-center align-top ">
             <div className="flex lg:flex-row flex-col gap-4 justify-between align-middle">
-              <div className="lg:text-left text-center">
+              <div className="lg:text-left text-l text-center">
                 <h3 className="text-[#F5B301]"><b>{title}</b></h3>
                 <i>{date}</i>
               </div>
               <Button variant="long_solid">Read</Button>
             </div>
-            <p class="text-justify indent-16">{description}</p>
+            <p class="text-justify indent-16 text-base">{description}</p>
         </div>
     </div>
   )
