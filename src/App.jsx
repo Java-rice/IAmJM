@@ -12,15 +12,16 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="bg-[#1E2329] min-h-screen  min-w-screen">
+    <div className="flex flex-col min-h-screen bg-[#1E2329]">
       <Name />
-      <Navigation></Navigation>
-      <TransitionWrapper>
-        <Outlet/>
-      </TransitionWrapper>
-      <Footer></Footer>
+      <Navigation />
+      <div className="flex-grow">
+        <TransitionWrapper>
+          <Outlet />
+        </TransitionWrapper>
+      </div>
+      <Footer />
     </div>
   );
 }
-
 export default App;
