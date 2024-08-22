@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <div className="px-[10%] py-40 gap-20 flex flex-col lg:grid lg:grid-cols-12 ">
       <div className="w-[100%] lg:mt-20  lg:text-left lg:col-span-4 justify-center flex flex-col gap-4 text-center">
-        <h2 className="text-4xl text-[#F5B301]">Hello, Its me</h2>
+        <h2 className="text-4xl font-bold  text-[#F5B301]">Hello, Its me</h2>
         <h1 className="font-extrabold text-5xl text-[rgb(253,253,253)]">John Mark</h1>
-        <p className="text-[#FDFDFD] leading-8 text-l text-justify">
+        <p className="text-[#FDFDFD] leading-8 text-md text-justify">
           A third year <span className="text-[#F5B301]">Computer Science</span>{" "}
           student from{" "}
           <span className="text-[#F5B301]">
