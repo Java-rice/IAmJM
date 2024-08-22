@@ -1,15 +1,22 @@
 import React from 'react'
+import sample from "../../assets/sampleplaceholder.png"
+import { Button } from '../button/Button'
 
-const BlogCards = () => {
+const BlogCards = ({title, date, description, img}) => {
   return (
-    <div className="w-[90%] bg-[#2A2E34] text-[#FDFDFD] content-center flex flex-row h-auto py-5 px-2 justify-center align-middle gap-2">
-        <div className="my-auto px-10">
-            <img className='bg-black w-28 h-28 '/>
+    <div className="w-[100%] text-[#FDFDFD]  h-auto py-5 px-2 grid grid-cols-3 space-x-4">
+        <div className="my-auto w-[100%] h-auto col-span-1">
+          <img src={sample} alt={title} className='' />
         </div>
-        <div className="w-[80%] text-xl flex flex-col justify-center align-middle">
-            <h3 className="text-[#F5B301]">Title</h3>
-            <i>Date</i>
-            <p>A Computer Science student with a passion for technology, I'm excited about exploring different career paths in the tech world.</p>
+        <div className="col-span-2 text-xl flex flex-col gap-2 justify-center align-top ">
+            <div className="flex flex-row justify-between align-middle">
+              <div>
+                <h3 className="text-[#F5B301]"><b>{title}</b></h3>
+                <i>{date}</i>
+              </div>
+              <Button variant="long_solid">Read</Button>
+            </div>
+            <p class="text-justify">{description}</p>
         </div>
     </div>
   )
