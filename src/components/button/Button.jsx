@@ -13,7 +13,7 @@ const buttonVariants = cva(
         solid:
           "bg-[#F5B301] text-l py-5 px-6 text-[#2A2E34] font-bold hover:bg-[#FED154] transition duration-300",
         long_solid:
-          "bg-[#F5B301] text-l py-5 px-12 text-[#2A2E34] font-bold hover:bg-[#FED154] transition duration-300",
+          "bg-[#F5B301] text-l py-5 px-10 text-[#2A2E34] font-bold hover:bg-[#FED154] transition duration-300",
         bordered:
           "bg-[#2A2E34] text-l py-5 px-6 text-[#F5B301] border-[#F5B301] border-2 font-bold hover:bg-[#FED154]  hover:text-[#2A2E34] transition duration-300" 
         
