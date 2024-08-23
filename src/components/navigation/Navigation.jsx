@@ -13,8 +13,8 @@ import Blog from "../../assets/Blog.png";
 
 const Navigation = () => {
   return (
-    <div className="sticky rounded-md my-12 max-w-[80%] w-full bottom-12 left-0 right-0 lg:my-0 lg:fixed lg:w-auto lg:max-w-none lg:bottom-auto lg:right-32 lg:left-auto lg:top-48 mx-auto lg:py-8 bg-[#3B4046] z-20 pointer-events-none">
-      <nav className="flex flex-row relative lg:flex-col gap-10 justify-around pointer-events-auto">
+    <div className="sticky rounded-md my-12 max-w-[80%] w-[100vw] bottom-12 left-0 right-0 lg:my-0 lg:fixed lg:w-auto lg:max-w-none lg:bottom-auto lg:right-32 lg:left-auto lg:top-48 mx-auto lg:py-8 bg-[#3B4046] z-20 pointer-events-none">
+      <nav className="flex flex-row relative lg:flex-col lg:gap-10 gap-auto justify-around pointer-events-auto">
         <NavLink to="/IAmJM/" end>
           {({ isActive }) => (
             <div className={`w-14 h-14 flex items-center  p-auto justify-center bg-[#1E2329] relative lg:bottom-0 bottom-4 rounded-full transition-transform transform ${isActive ? "scale-125" : "hover:scale-125"} hover:brightness-110`}>
