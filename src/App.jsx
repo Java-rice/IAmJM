@@ -12,7 +12,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#1E2329]">
+    <div className="flex flex-col min-h-screen bg-[#1E2329] no-zoom-out">
       <Name />
       <div className="flex-grow overflow-hidden flex flex-col">
         <TransitionWrapper>
