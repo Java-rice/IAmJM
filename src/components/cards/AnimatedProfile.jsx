@@ -3,7 +3,7 @@ import profile from '../../assets/profile.png';
 
 const AnimatedProfile = () => {
   return (
-    <div className="flex items-center justify-center h-screen mx-auto">
+    <div className="flex items-center justify-center mx-[10%]">
       <svg 
         width="100%" 
         height="80%"
