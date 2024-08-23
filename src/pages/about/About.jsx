@@ -44,32 +44,32 @@ const About = () => {
         </div>
       </div>
       <div>
-        <h3 className="font-bold text-3xl">
-          <span className="text-[#F5B301]">PERSONAL</span>INFORMATION
+        <h3 className="font-bold text-3xl text-center">
+          <span className="text-[#F5B301]">PERSONAL</span> INFORMATION
         </h3>
         <div></div>
         <div></div>
-        <div>
-          <div>
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col gap-2" >
             <p>
-              Name:<span>John Mark Pacaldo Peroche</span>
+              Name:<b>John Mark Pacaldo Peroche</b>
             </p>
             <p>
-              Age:<span>21 Years Old</span>
+              Age:<b>21 Years Old</b>
             </p>
             <p>
-              Nationality:<span>Filipino</span>
+              Nationality:<b>Filipino</b>
             </p>
           </div>
-          <div>
+          <div className="flex flex-col gap-2" >
             <p>
-              City:<span>John Mark Pacaldo Peroche</span>
+              City:<b>Bocaue</b>
             </p>
             <p>
-              Province:<span>John Mark Pacaldo Peroche</span>
+              Province:<b>Bulacan</b>
             </p>
             <p>
-              Languages:<span>John Mark Pacaldo Peroche</span>
+              Languages:<b>Tagalog & English</b>
             </p>
           </div>
         </div>
