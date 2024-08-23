@@ -3,25 +3,35 @@ import profile from '../../assets/profile.png';
 
 const AnimatedProfile = () => {
   return (
-    <div className="w-[100%] relative">
-      {/* Top Bar */}
-      <div className="relative">
-        <div className="w-[100%] min-w-4xl h-[4%] bg-[#FED154] absolute -top-10 animate-slide-right"></div>
-        {/* Left Side Bars */}
-        <div className="w-[50%] h-[4%] bg-[#FED154] absolute right-24 top-[1rem] animate-slide-right delay-150"></div>
-        <div className="w-[20%] h-[4%] bg-[#FED154] absolute right-32 top-[4rem] animate-slide-right delay-300"></div>
-        <div className="w-[50%] h-[40%] bg-[#FED154] absolute left-20 top-[8rem] z-10 animate-slide-right delay-450"></div>
-        
-        {/* Profile Image */}
-        <img src={profile} alt="Profile" className="relative z-20 h-[80%] mx-auto" />
-        
-        {/* Right Side Bars */}
-        <div className="w-[50%] h-[50%] bg-[#F5B301] absolute right-20 top-[12rem] animate-slide-left delay-450"></div>
-        <div className="w-[20%] h-[4%] bg-[#FED154] absolute left-32 top-[34rem] animate-slide-left delay-300"></div>
-        <div className="w-[50%] h-[4%] bg-[#FED154] absolute left-20 top-[37rem] animate-slide-left delay-150"></div>
-        <div className="w-[82%] h-[4%] bg-[#FED154] absolute bottom-30 animate-slide-right delay-600"></div>
-      </div>
-      {/* Bottom Bar */}
+    <div className="flex items-center justify-center mx-[10%]">
+      <svg 
+        width="100%" 
+        height="80%"
+        max-height="1200" 
+        viewBox="0 0 538 545" 
+        preserveAspectRatio="xMidYMid meet" 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Define the pattern for the profile image */}
+        <defs>
+          <pattern id="pattern0" patternUnits="objectBoundingBox" width="1" height="1">
+            <image href={profile} x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+        </defs>
+
+        {/* Rectangles with animations */}
+        <rect x="30%" y="32%" width="58%" height="44%" fill="#F5B301" className="animate-slide-left delay-450" />
+        <rect x="19%" y="20%" width="47%" height="34%" fill="#FED154" className="animate-slide-right delay-450" />
+        <rect x="0" y="0" width="100%" height="3.8%" fill="#FED154" className="animate-slide-right" />
+        <rect x="37%" y="7%" width="55%" height="3.8%" fill="#FED154" className="animate-slide-right delay-150" />
+        <rect x="72%" y="14%" width="16%" height="3.8%" fill="#FED154" className="animate-slide-right delay-300" />
+        <rect x="19%" y="82%" width="14.7%" height="3.8%" fill="#FED154" className="animate-slide-left delay-300" />
+        <rect x="11%" y="89%" width="49.4%" height="3.8%" fill="#FED154" className="animate-slide-left delay-150" />
+        <rect y="96%" width="88.6%" height="3.8%" fill="#FED154" className="animate-slide-right delay-600" />
+
+        {/* Rectangle with the profile image pattern */}
+        <rect x="1.4%" y="3.8%" width="94%" height="92%" fill="url(#pattern0)" />
+      </svg>
     </div>
   );
 };
