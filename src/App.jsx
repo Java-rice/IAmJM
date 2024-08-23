@@ -14,13 +14,13 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen bg-[#1E2329]">
       <Name />
-      <Navigation />
-      <div className="flex-grow">
+      <div className="flex-grow overflow-hidden flex flex-col">
         <TransitionWrapper>
           <Outlet />
         </TransitionWrapper>
       </div>
-      <Footer />
+      <Navigation />
+      <Footer className="mt-auto" />
     </div>
   );
 }
