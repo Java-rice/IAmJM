@@ -3,7 +3,7 @@ import Navigation from "../../components/navigation/Navigation";
 
 const About = () => {
   return (
-    <div className="px-[10%] gap-20 text-[#FDFDFD] font-rubik flex flex-col justify-center items-center h-auto py-auto">
+    <div className="px-[10%] py-[10%] gap-20 text-[#FDFDFD] font-rubik flex flex-col justify-center items-center">
       <div className="flex lg:flex-row flex-col-reverse pt-20 ">
         <div className="lg:w-[35%] w-[100%] ">
           <div className="relative">
