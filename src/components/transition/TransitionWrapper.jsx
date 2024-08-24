@@ -1,21 +1,23 @@
 import React from 'react';
-import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useLocation } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './TransitionWrapper.css'; // Create this CSS file for transitions
 
 const TransitionWrapper = ({ children }) => {
   const location = useLocation();
+
   return (
-    <SwitchTransition>
+    <TransitionGroup>
       <CSSTransition
-        key={location.pathname}
+        key={location.key}
+        timeout={500}
         classNames="fade"
-        timeout={300}
       >
-        <div>
+        <div className="transition-wrapper">
           {children}
         </div>
       </CSSTransition>
-    </SwitchTransition>
+    </TransitionGroup>
   );
 };
 

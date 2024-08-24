@@ -6,9 +6,9 @@ import { Button } from "../../components/button/Button";
 const Home = () => {
   return (
     <div className="px-[10%] py-[8%] gap-20 flex flex-col-reverse lg:grid lg:grid-cols-12 ">
-      <div className="w-[100%] lg:my-auto lg:text-left lg:col-span-5 justify-center flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-bold  text-[#F5B301]">Hello, Its me</h2>
-        <h1 className="font-extrabold text-4xl text-[rgb(253,253,253)]">John Mark</h1>
+      <div className="w-[100%] lg:my-auto lg:text-left lg:col-span-5 justify-center flex flex-col gap-1 text-center">
+        <h2 className="text-4xl font-bold  text-[#F5B301]">Hello, Its me</h2>
+        <h1 className="font-extrabold text-5xl text-[rgb(253,253,253)]">John Mark</h1>
         <p className="text-[#FDFDFD] leading-8 text-base text-justify font-bold">
           A third year <span className="text-[#F5B301]">Computer Science</span>{" "}
           student from{" "}
@@ -20,8 +20,8 @@ const Home = () => {
         </p>
         <Socials></Socials>
         <div className="flex flex-row gap-10 align-center m-auto pt-10">
-          <Button variant="solid">About Me</Button>
-          <Button variant="bordered">Contact Me</Button>
+          <Button variant="solid"><a href="/IAmJM/about">About Me</a></Button>
+          <Button variant="bordered"><a href="/IAmJM/contacts">Contact Me</a></Button>
         </div>
       </div>
       <div className="col-span-7">
