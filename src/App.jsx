@@ -4,6 +4,7 @@ import Name from "./components/logo/Name";
 import TransitionWrapper from "./components/transition/TransitionWrapper";
 import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/footer/Footer";
+import ScrollToTop from "./components/scroll/ScrollToTop";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Name />
       <div className="flex-grow overflow-hidden flex flex-col">
         <TransitionWrapper>
+          <ScrollToTop/>
           <Outlet />
         </TransitionWrapper>
       </div>
