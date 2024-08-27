@@ -23,10 +23,16 @@ const buttonVariants = cva(
         sm: "h-9 px-2",
         lg: "h-11 px-8",
       },
+      width: {
+        default: "w-auto",
+        sm: "w-10 px-auto",
+        lg: "w-15 px-auto",
+      }
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      width: "default"
     },
   }
 );
