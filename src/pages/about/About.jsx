@@ -84,7 +84,16 @@ const About = () => {
         <div></div>
         <div></div>
       </div>
-      <div></div>
+      <div className="pb-20">
+        <h3 className="font-bold text-3xl text-center text-[#F5B301]">Skills</h3>
+        <div>
+
+        </div>
+        <div className="flex flex-row gap-4">
+          <Button variant="long_solid" size="lg" width="lg"><a>Explore Projects</a></Button>
+          <Button variant="long_solid" size="lg" width="lg"><a>Contact Me</a></Button>
+        </div>
+      </div>
     </div>
   );
 };
