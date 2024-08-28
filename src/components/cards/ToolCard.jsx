@@ -1,17 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const ToolCard = () => {
+const ToolCard = ({ imgSrc, title, description }) => {
   return (
-    <div>
-        <div>
-            <div>
-                <img/>
-            </div>
-        </div>
-        <h2>Title</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur harum animi illum rem, et nulla omnis aut cum vel aliquam porro sunt exercitationem sed repellat mollitia unde non odit minima voluptatem quas.</p>
+    <div className="tool-card">
+      <div className="image-container">
+        <img src={imgSrc} alt={title} />
+      </div>
+      <h2>{title}</h2>
+      <p>{description}</p>
     </div>
-  )
+  );
 }
 
-export default ToolCard
+export default ToolCard;
