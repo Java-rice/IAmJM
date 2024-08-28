@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../../components/navigation/Navigation";
+import ToolCard from "../../components/cards/ToolCard";
 import { Button } from "../../components/button/Button";
 import profileImage from "../../assets/profileimage.png"
 import Resume from "../../assets/Resume.png"
@@ -87,7 +87,7 @@ const About = () => {
       <div className="pb-20">
         <h3 className="font-bold text-3xl text-center text-[#F5B301]">Skills</h3>
         <div>
-
+          <ToolCard></ToolCard>
         </div>
         <div className="flex flex-row gap-4">
           <Button variant="long_solid" size="lg" width="lg"><a>Explore Projects</a></Button>
