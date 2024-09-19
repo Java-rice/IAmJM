@@ -10,7 +10,6 @@ const AnimatedProfile = () => {
         max-height="1200" 
         viewBox="0 0 538 545" 
         preserveAspectRatio="xMidYMid meet" 
-        xmlns="http://www.w3.org/2000/svg"
       >
         {/* Define the pattern for the profile image */}
         <defs>
