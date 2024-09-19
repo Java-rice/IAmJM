@@ -51,38 +51,40 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex relative flex-col gap-3">
         <h3 className="font-bold text-3xl text-center">
           <span className="text-[#F5B301]">PERSONAL</span> INFORMATION
         </h3>
-        <div></div>
-        <div></div>
+        <svg>
+          <rect y="32%" width="58%" height="44%" fill="#F5B301" className="animate-slide-left delay-450" />
+          <rect y="80%" x="90%" width="58%" height="44%" fill="#F5B301" className="animate-slide-left delay-450" />
+          <rect y="32%" width="58%" height="44%" fill="#F5B301" className="animate-slide-left delay-450" />
+          <rect y="32%" width="58%" height="44%" fill="#F5B301" className="animate-slide-left delay-450" />
+        </svg>
         <div className="flex flex-row gap-20 justify-between">
           <div className="flex flex-col gap-4" >
             <p>
-              Name:<b>John Mark Pacaldo Peroche</b>
+              Name:<b> John Mark Pacaldo Peroche</b>
             </p>
             <p>
-              Age:<b>21 Years Old</b>
+              Age:<b> 21 Years Old</b>
             </p>
             <p>
-              Nationality:<b>Filipino</b>
+              Nationality:<b> Filipino</b>
             </p>
           </div>
           <div className="flex flex-col gap-4" >
             <p>
-              City:<b>Bocaue</b>
+              City:<b> Bocaue</b>
             </p>
             <p>
-              Province:<b>Bulacan</b>
+              Province:<b> Bulacan</b>
             </p>
             <p>
-              Languages:<b>Tagalog & English</b>
+              Languages:<b> Tagalog & English</b>
             </p>
           </div>
         </div>
-        <div></div>
-        <div></div>
       </div>
       <div className="pb-20">
         <h3 className="font-bold text-3xl text-center text-[#F5B301]">Skills</h3>
@@ -90,8 +92,8 @@ const About = () => {
           <ToolCard></ToolCard>
         </div>
         <div className="flex flex-row gap-4">
-          <Button variant="long_solid" size="lg" width="lg"><a>Explore Projects</a></Button>
-          <Button variant="long_solid" size="lg" width="lg"><a>Contact Me</a></Button>
+          <Button variant="long_solid" size="lg"><a>Explore Projects</a></Button>
+          <Button variant="long_solid" size="lg"><a>Contact Me</a></Button>
         </div>
       </div>
     </div>

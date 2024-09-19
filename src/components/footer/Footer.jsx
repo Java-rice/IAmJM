@@ -12,17 +12,19 @@ const Footer = () => {
         <div className='lg:relative lg:right-4'>
           <Name />
         </div>
-        <p>Bocaue, Bulacan</p>
-        <p>@ 2024 John Mark Peroche</p>
+        <div className='w-100 lg:right-4'>
+          <p className='text-xs'>Bocaue, Bulacan</p>
+          <p className='text-xs'>@ 2024 John Mark Peroche</p>
+        </div>
       </div>
       <div className='lg:text-right text-center'>
-        <h4><b>REACH OUT</b></h4>
-        <p>johnmark.p.peroche@gmail.com</p>
-        <ul className="list-none flex flex-row align-center justify-center lg:justify-between gap-2">
-          <li><a className="cursor-pointer" href="https://www.instagram.com/jamaaaaaaaaaaaak/"><img src={Instagram} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '2.5rem', height: '2.5rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://www.facebook.com/johnmark.pacaldoperoche/"><img src={Facebook} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '2.5rem', height: '2.5rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://github.com/Java-rice"><img src={Github} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '2.5rem', height: '2.5rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://www.linkedin.com/in/john-mark-peroche-61a756229/"><img src={LinkedIn} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '2.5rem', height: '2.5rem' }}/></a></li>
+        <h4 className='text-md'><b>REACH OUT</b></h4>
+        <p className='text-xs'>johnmark.p.peroche@gmail.com</p>
+        <ul className="list-none flex flex-row align-center justify-center lg:justify-end gap-2">
+          <li><a className="cursor-pointer" href="https://www.instagram.com/jamaaaaaaaaaaaak/"><img src={Instagram} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
+          <li><a className="cursor-pointer" href="https://www.facebook.com/johnmark.pacaldoperoche/"><img src={Facebook} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
+          <li><a className="cursor-pointer" href="https://github.com/Java-rice"><img src={Github} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
+          <li><a className="cursor-pointer" href="https://www.linkedin.com/in/john-mark-peroche-61a756229/"><img src={LinkedIn} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
         </ul>
       </div>
     </div>
