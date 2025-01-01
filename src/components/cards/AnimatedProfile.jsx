@@ -5,12 +5,11 @@ const AnimatedProfile = () => {
   return (
     <div className="flex items-center justify-center mx-2 lg:mx-0">
       <svg 
-        width="100%" 
+        width="70%" 
         height="auto"
         max-height="1200" 
         viewBox="0 0 538 545" 
         preserveAspectRatio="xMidYMid meet" 
-        xmlns="http://www.w3.org/2000/svg"
       >
         {/* Define the pattern for the profile image */}
         <defs>
