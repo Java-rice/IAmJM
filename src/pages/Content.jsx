@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import '../App.css'
+import '../App.css';
 import {
   BrowserRouter as Router,
   Outlet,
@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import TransitionWrapper from "../components/transition/TransitionWrapper";
 import Navigation from "../components/navigation/Navigation";
-import ScrollToTop from "../components/scroll/ScrollToTop";
 
 const Content = () => {
   const routes = [
@@ -25,19 +24,30 @@ const Content = () => {
   const bottomTriggerRef = useRef(null);
   const isNavigatingRef = useRef(false);
 
-  useEffect(() => {
-    // Reset navigation lock when route changes
-    const timeout = setTimeout(() => {
-      isNavigatingRef.current = false;
-    }, 1000);
+  const smoothScrollTo = (targetY) => {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    const duration = 600;
+    let startTime = null;
 
-    return () => clearTimeout(timeout);
-  }, [location.pathname]);
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+
+      window.scrollTo(0, startY + distance * percentage);
+      if (percentage < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
 
   useEffect(() => {
     const observerOptions = {
       root: null,
-      threshold: 1.0,
+      threshold: 0.9, 
     };
 
     const handleIntersection = (entries) => {
@@ -50,33 +60,25 @@ const Content = () => {
           isNavigatingRef.current = true;
 
           if (entry.target === topTriggerRef.current && currentIndex > 0) {
-            // Navigate to previous page
             const prevIndex = currentIndex - 1;
             navigate(routes[prevIndex], { replace: true });
-            
-            // Scroll to bottom of new page after a short delay
+
             setTimeout(() => {
-              window.scrollTo({
-                top: document.documentElement.scrollHeight,
-                behavior: 'smooth'
-              });
+              smoothScrollTo(document.documentElement.scrollHeight);
             }, 100);
           } else if (entry.target === bottomTriggerRef.current && currentIndex < routes.length - 1) {
-            // Navigate to next page
             const nextIndex = currentIndex + 1;
             navigate(routes[nextIndex], { replace: true });
-            
-            // Scroll to top of new page
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
+
+            setTimeout(() => {
+              smoothScrollTo(0);
+            }, 100);
           }
 
           // Reset navigation lock after animation
           setTimeout(() => {
             isNavigatingRef.current = false;
-          }, 1000);
+          }, 700);
         }
       });
     };
