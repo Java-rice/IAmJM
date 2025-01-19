@@ -1,9 +1,9 @@
 import React from "react";
-import LayoutCards from "../../components/cards/LayoutCards";
-import ProjectCards from "../../components/cards/ProjectCards";
-import EmblaCarousel from './EmblaCarousel';
-import projectData from '../../contents/projects/project';
-import './Projects.css';
+import LayoutCards from "@src/components/cards/LayoutCards";
+import ProjectCards from "@src/components/cards/ProjectCards";
+import EmblaCarousel from '@src/pages/projects/EmblaCarousel';
+import projectData from '@src/contents/projects/project';
+import '@src/pages/projects/Projects.css';
 
 const OPTIONS = { dragFree: true, loop: true };
 

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { DotButton, useDotButton } from './EmblaCarouselDotButton';
+import { DotButton, useDotButton } from '@src/pages/projects/EmblaCarouselDotButton';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 

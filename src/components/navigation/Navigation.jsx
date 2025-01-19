@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import AHome from "../../assets/AHome.png";
-import AAbout from "../../assets/AAbout.png";
-import AContact from "../../assets/AContact.png";
-import AProjects from "../../assets/AProjects.png";
-import ABlog from "../../assets/ABlog.png";
-import Home from "../../assets/Home.png";
-import About from "../../assets/About.png";
-import Contacts from "../../assets/Contacts.png";
-import Project from "../../assets/Project.png";
-import Blog from "../../assets/Blog.png";
+import AHome from "@src/assets/AHome.png";
+import AAbout from "@src/assets/AAbout.png";
+import AContact from "@src/assets/AContact.png";
+import AProjects from "@src/assets/AProjects.png";
+import ABlog from "@src/assets/ABlog.png";
+import Home from "@src/assets/Home.png";
+import About from "@src/assets/About.png";
+import Contacts from "@src/assets/Contacts.png";
+import Project from "@src/assets/Project.png";
+import Blog from "@src/assets/Blog.png";
 
 const Navigation = () => {
   return (

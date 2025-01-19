@@ -1,9 +1,9 @@
 import React from 'react'
 import Name from '../logo/Name'
-import Facebook from "../../assets/Facebook.png";
-import Instagram from "../../assets/Instagram.png";
-import LinkedIn from "../../assets/LinkedIn.png";
-import Github from "../../assets/GitHub.png"
+import Facebook from "@src/assets/Facebook.png";
+import Instagram from "@src/assets/Instagram.png";
+import LinkedIn from "@src/assets/LinkedIn.png";
+import Github from "@src/assets/GitHub.png"
 
 const Footer = () => {
   return (

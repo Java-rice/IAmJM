@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './TransitionWrapper.css'; // Create this CSS file for transitions
+import '@src/components/transition/TransitionWrapper.css'; 
 
 const TransitionWrapper = ({ children }) => {
   const location = useLocation();
