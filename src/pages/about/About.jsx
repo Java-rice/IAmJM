@@ -1,8 +1,8 @@
 import React from "react";
-import ToolCard from "../../components/cards/ToolCard";
-import { Button } from "../../components/button/Button";
-import profileImage from "../../assets/profileimage.png"
-import Resume from "../../assets/Resume.png"
+import ToolCard from "@src/components/cards/ToolCard";
+import { Button } from "@src/components/button/Button";
+import profileImage from "@src/assets/profileimage.png"
+import Resume from "@src/assets/Resume.png"
 
 const About = () => {
   return (

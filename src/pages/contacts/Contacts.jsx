@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navigation from "../../components/navigation/Navigation";
-import { Button } from "../../components/button/Button";
+import Navigation from "@src/components/navigation/Navigation";
+import { Button } from "@src/components/button/Button";
 
 const Contacts = () => {
   const [formData, setFormData] = useState({

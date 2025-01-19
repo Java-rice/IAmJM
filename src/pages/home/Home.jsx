@@ -1,7 +1,7 @@
 import React from "react";
-import Socials from "../../components/cards/Socials";
-import AnimatedProfile from "../../components/cards/AnimatedProfile";
-import { Button } from "../../components/button/Button";
+import Socials from "@src/components/cards/Socials";
+import AnimatedProfile from "@src/components/cards/AnimatedProfile";
+import { Button } from "@src/components/button/Button";
 
 const Home = () => {
   return (

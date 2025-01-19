@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
-import "../App.css";
+import "@src/App.css";
 import {
   BrowserRouter as Router,
   Outlet,
   useNavigate,
   useLocation,
 } from "react-router-dom";
-import TransitionWrapper from "../components/transition/TransitionWrapper";
-import Navigation from "../components/navigation/Navigation";
-import ScrollToTop from "../components/scroll/ScrollToTop"
+import TransitionWrapper from "@src/components/transition/TransitionWrapper";
+import Navigation from "@src/components/navigation/Navigation";
+import ScrollToTop from "@src/components/scroll/ScrollToTop"
 
 const Content = () => {
   const routes = [

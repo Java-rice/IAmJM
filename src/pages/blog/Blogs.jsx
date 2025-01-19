@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "../../components/navigation/Navigation";
-import BlogCards from "../../components/cards/BlogCards";
+import Navigation from "@src/components/navigation/Navigation";
+import BlogCards from "@src/components/cards/BlogCards";
 
 const Blogs = () => {
   const blogData = [
