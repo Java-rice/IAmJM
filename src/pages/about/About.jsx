@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="relative px-6 md:px-[10%] py-24 text-[#FDFDFD] font-rubik flex flex-col items-center gap-24 overflow-hidden bg-[#1E2329]">
+    <div className="relative px-6 md:px-[10%] py-24 text-[#FDFDFD] font-rubik flex flex-col items-center gap-16 overflow-hidden bg-[#1E2329]">
       {/* About Me Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
         {/* Text */}
         <motion.div
           className="lg:col-span-5 flex flex-col gap-5 text-center lg:text-left"
