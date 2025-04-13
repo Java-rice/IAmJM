@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import TransitionWrapper from "@src/components/transition/TransitionWrapper";
 import Navigation from "@src/components/navigation/Navigation";
-import ScrollToTop from "@src/components/scroll/ScrollToTop"
+import ScrollToTop from "@src/components/scroll/ScrollToTop";
 
 const Content = () => {
   const routes = [
@@ -24,15 +24,15 @@ const Content = () => {
   const isNavigatingRef = useRef(false);
 
   return (
-    <div className="relative min-h-screen">
-      <div className="flex-1 flex flex-col">
+    <>
+      <div className="relative flex-1 flex flex-col">
         <TransitionWrapper>
           <ScrollToTop />
           <Outlet />
         </TransitionWrapper>
       </div>
       <Navigation />
-    </div>
+    </>
   );
 };
 

@@ -27,11 +27,13 @@ const Contacts = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email address.";
     }
+
     if (!formData.phone.trim()) {
       newErrors.phone = "Mobile number is required.";
     } else if (!/^[0-9]{10,15}$/.test(formData.phone)) {
       newErrors.phone = "Enter a valid mobile number.";
     }
+
     if (!formData.message.trim()) newErrors.message = "Message cannot be empty.";
 
     setErrors(newErrors);
@@ -40,11 +42,9 @@ const Contacts = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
 
     try {
-      // Replace with your email sending logic (e.g., Email.js, SMTP, or backend API).
       const response = await fetch("https://your-email-api-endpoint.com/send", {
         method: "POST",
         headers: {
@@ -66,70 +66,76 @@ const Contacts = () => {
   };
 
   return (
-    <div className="px-4 md:px-[10%] gap-10 font-rubik flex flex-col justify-center items-center h-auto py-6 md:py-[3%]">
-      <div className="w-full text-center text-[#FDFDFD]">
-        <h1 className="text-2xl md:text-3xl">
-          <b>REACH ME OUT</b>
+    <div className="px-6 md:px-20 py-10 font-rubik text-white">
+      <div className="text-center mb-10">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-wide text-[#F5B301]">
+          REACH ME OUT
         </h1>
       </div>
+
       <form
-        className="w-full grid grid-cols-1 md:grid-cols-2 gap-10"
         onSubmit={handleSubmit}
+        className="grid md:grid-cols-2 gap-12 bg-[#2A2E34] p-8 rounded-2xl shadow-xl"
       >
-        <div className="flex flex-col justify-start gap-5">
-          <h2 className="text-[#F5B301] text-xl md:text-2xl">
-            <b>SEND ME A MESSAGE</b>
-          </h2>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            placeholder="Full Name"
-            className={`p-4 border-b-4 ${errors.name ? "border-red-500" : "border-[#F5B301]"}`}
-          />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+        <div className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold text-[#F5B301]">SEND ME A MESSAGE</h2>
 
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Email"
-            className={`p-4 border-b-4 ${errors.email ? "border-red-500" : "border-[#F5B301]"}`}
-          />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+          {["name", "email", "phone"].map((field) => (
+            <div key={field} className="flex flex-col">
+              <input
+                type={field === "email" ? "email" : "text"}
+                name={field}
+                value={formData[field]}
+                onChange={handleInputChange}
+                placeholder={
+                  field === "name"
+                    ? "Full Name"
+                    : field === "email"
+                    ? "Email"
+                    : "Mobile Number"
+                }
+                className={`p-3 rounded-md bg-[#3B4046] border-2 ${
+                  errors[field] ? "border-red-500" : "border-[#F5B301]"
+                } focus:outline-none focus:ring-2 focus:ring-[#F5B301] transition-all`}
+              />
+              {errors[field] && (
+                <p className="text-red-400 text-sm mt-1">{errors[field]}</p>
+              )}
+            </div>
+          ))}
 
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-            placeholder="Mobile Number"
-            className={`p-4 border-b-4 ${errors.phone ? "border-red-500" : "border-[#F5B301]"}`}
-          />
-          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            placeholder="Message"
-            className={`p-4 border-b-4 h-60 md:h-40 ${errors.message ? "border-red-500" : "border-[#F5B301]"}`}
-          ></textarea>
-          {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-
-          <div className="lg:mx-0 mx-auto">
-            <Button variant="solid">Send a Message</Button>
+          <div className="flex flex-col">
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="Your Message"
+              className={`p-3 h-32 rounded-md bg-[#3B4046] border-2 ${
+                errors.message ? "border-red-500" : "border-[#F5B301]"
+              } focus:outline-none focus:ring-2 focus:ring-[#F5B301] transition-all resize-none`}
+            />
+            {errors.message && (
+              <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+            )}
           </div>
 
-          {errors.submit && <p className="text-red-500 text-sm mt-2">{errors.submit}</p>}
-          {successMessage && <p className="text-green-500 text-sm mt-2">{successMessage}</p>}
+          <div className="pt-2">
+            <Button variant="solid" className="w-full">
+              Send Message
+            </Button>
+            {errors.submit && (
+              <p className="text-red-400 text-sm mt-3">{errors.submit}</p>
+            )}
+            {successMessage && (
+              <p className="text-green-400 text-sm mt-3">{successMessage}</p>
+            )}
+          </div>
         </div>
 
-        <div className="flex flex-col">
-          <p className="text-[#FDFDFD] leading-8 text-base md:text-lg text-justify">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur atque eligendi laboriosam natus dolores, suscipit magni maiores, neque, error similique eius quod tempora repellat laudantium modi autem sapiente! Quas repellat omnis quibusdam dolor ab recusandae, laborum quisquam reiciendis eligendi nesciunt rerum nulla, repudiandae fuga obcaecati sed sequi quidem quam doloribus.
+        <div className="flex flex-col justify-center text-justify text-lg leading-relaxed text-gray-200">
+          <p>
+            I'm always open to discuss your next big idea or answer any questions you may have.
+            Drop me a line and let's get the conversation started. Whether it's a project, a partnership, or just a friendly hello—I'd love to hear from you!
           </p>
         </div>
       </form>
