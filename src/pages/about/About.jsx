@@ -47,7 +47,7 @@ const About = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-6">
-            <Button variant="solid">
+            <Button variant="solid_image" size="default_image">
               <div className="flex items-center gap-3">
                 <div className="flex justify-center items-center bg-[#1E2329] border border-[#F5B301] w-10 h-10 rounded">
                   <img
@@ -56,7 +56,7 @@ const About = () => {
                     className="w-5 h-5 object-contain"
                   />
                 </div>
-                <span className="text-[#1E2329] font-bold text-base">
+                <span className="text-[#1E2329] font-bold text-base pr-4">
                   View My CV
                 </span>
               </div>
@@ -69,7 +69,7 @@ const About = () => {
 
         {/* Profile Image with Geometric Animation */}
         <motion.div
-          className="lg:col-span-7 w-full flex justify-center items-center relative min-h-[36rem]"
+          className="lg:col-span-7 w-full flex justify-center  items-center relative min-h-[36rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -104,7 +104,7 @@ const About = () => {
           <motion.img
             src={profileImage}
             alt="Profile"
-            className="relative z-10 w-[20rem] h-[20rem] md:w-[24rem] md:h-[24rem] object-cover"
+            className="relative z-10 w-[20rem]  md:w-[24rem] object-cover"
             initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
