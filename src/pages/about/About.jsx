@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ToolCard from "@src/components/cards/ToolCard";
 import { Button } from "@src/components/button/Button";
 import profileImage from "@src/assets/profileimage.png";
@@ -7,6 +7,8 @@ import tools from "@src/data/Tools";
 import { motion } from "framer-motion";
 
 const About = () => {
+  const [selectedTool, setSelectedTool] = useState(null);
+
   return (
     <div className="relative px-6 md:px-[10%] py-24 text-[#FDFDFD] font-rubik flex flex-col items-center gap-16 overflow-hidden bg-[#1E2329]">
       {/* About Me Section */}
@@ -69,12 +71,11 @@ const About = () => {
 
         {/* Profile Image with Geometric Animation */}
         <motion.div
-          className="lg:col-span-7 w-full flex justify-center  items-center relative min-h-[36rem]"
+          className="lg:col-span-7 w-full flex justify-center items-center relative min-h-[36rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Geometric Animated Background */}
           <motion.div
             className="absolute inset-0 flex justify-center items-center z-0"
             initial={{ rotate: 0 }}
@@ -100,11 +101,10 @@ const About = () => {
             </svg>
           </motion.div>
 
-          {/* Profile Image */}
           <motion.img
             src={profileImage}
             alt="Profile"
-            className="relative z-10 w-[20rem]  md:w-[24rem] object-cover"
+            className="relative z-10 w-[20rem] md:w-[24rem] object-cover"
             initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -129,13 +129,51 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 {skillList.map((tool, index) => (
-                  <ToolCard key={index} {...tool} />
+                  <ToolCard
+                  key={index}
+                  imgSrc={tool.imgSrc}
+                  title={tool.title}
+                  color={tool.color}
+                  text_color={tool.text_color}
+                  onClick={() => setSelectedTool(tool)}
+                />
                 ))}
               </motion.div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Overlay for Projects */}
+      {selectedTool && selectedTool.projects?.length > 0 && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="bg-[#1E2329] border border-[#F5B301] p-6 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative">
+            <h3 className="text-lg font-semibold text-[#F5B301] text-center mb-4">
+              Projects using {selectedTool.title}
+            </h3>
+            <ul className="text-white space-y-3 text-base max-h-60 overflow-y-auto px-1">
+              {selectedTool.projects.map((project, index) => (
+                <li key={index}>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline block text-center"
+                  >
+                    • {project.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => setSelectedTool(null)}
+              className="absolute top-2 right-3 text-sm text-gray-400 hover:text-red-400"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Content = () => {
 
   return (
     <>
-      <div className="relative flex-1 flex flex-col">
+      <div className="relative flex-1 flex flex-col px-4">
         <TransitionWrapper>
           <ScrollToTop />
           <Outlet />

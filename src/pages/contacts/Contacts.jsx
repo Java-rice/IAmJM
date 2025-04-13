@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Navigation from "@src/components/navigation/Navigation";
 import { Button } from "@src/components/button/Button";
+import Facebook from "@src/assets/Facebook.png";
+import Instagram from "@src/assets/Instagram.png";
+import LinkedIn from "@src/assets/LinkedIn.png";
+import Github from "@src/assets/GitHub.png";
 
 const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -61,16 +65,23 @@ const Contacts = () => {
         throw new Error("Failed to send the message.");
       }
     } catch (error) {
-      setErrors({ submit: "There was an issue sending your message. Please try again later." });
+      setErrors({
+        submit: "There was an issue sending your message. Please try again later.",
+      });
     }
   };
 
   return (
-    <div className="px-6 md:px-20 py-10 font-rubik text-white">
-      <div className="text-center mb-10">
+    <div className="px-6 md:px-20 py-24 font-rubik text-white">
+      <div className="text-center my-8">
         <h1 className="text-3xl md:text-4xl font-bold tracking-wide text-[#F5B301]">
           REACH ME OUT
         </h1>
+        <p className="text-gray-300 text-base md:text-lg mt-4 max-w-3xl mx-auto">
+          Let's connect! Whether you have a question, a collaboration opportunity,
+          or just want to say hi—I'm excited to hear from you. Fill out the form below
+          and I’ll get back to you as soon as I can.
+        </p>
       </div>
 
       <form
@@ -132,11 +143,57 @@ const Contacts = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center text-justify text-lg leading-relaxed text-gray-200">
-          <p>
-            I'm always open to discuss your next big idea or answer any questions you may have.
-            Drop me a line and let's get the conversation started. Whether it's a project, a partnership, or just a friendly hello—I'd love to hear from you!
-          </p>
+        <div className="flex flex-col justify-between text-justify text-base leading-relaxed text-gray-200 gap-6">
+          <div className="pt-16">
+            <p>
+              I'm always open to connecting with passionate individuals and creative minds.
+              Whether you're starting a new project, need a developer for hire, or just
+              looking for some advice—feel free to drop me a message.
+            </p>
+            <p className="mt-4">
+              I typically respond within 24–48 hours, so hang tight and let’s make
+              something awesome together.
+            </p>
+          </div>
+
+          {/* Socials Section */}
+          <div className="mt-4">
+            <h4 className="text-[#F5B301] font-semibold mb-2">You can also find me here:</h4>
+            <div className="flex flex-row gap-4 mt-2">
+              <a
+                href="https://www.instagram.com/jamaaaaaaaaaaaak/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={Instagram} alt="Instagram" className="w-10 h-10" />
+              </a>
+              <a
+                href="https://www.facebook.com/johnmark.pacaldoperoche/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={Facebook} alt="Facebook" className="w-10 h-10" />
+              </a>
+              <a
+                href="https://github.com/Java-rice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={Github} alt="GitHub" className="w-10 h-10" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/john-mark-peroche-61a756229/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={LinkedIn} alt="LinkedIn" className="w-10 h-10" />
+              </a>
+            </div>
+          </div>
         </div>
       </form>
     </div>
