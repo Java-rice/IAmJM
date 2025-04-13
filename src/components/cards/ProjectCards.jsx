@@ -1,20 +1,50 @@
-import React from 'react'
-import { Button } from '../button/Button'
+import React from "react";
+import { Button } from "@src/components/button/Button";
+import { Link } from "react-router-dom";
 
-const ProjectCards = ({ title, description, imageSrc }) => {
+const ProjectCards = ({ project, viewMode }) => {
+  const { title, description, images, link } = project;
+  const imageSrc = images?.[0];
+
   return (
-    <div className='lg:w-[90%] w-[80%] min-w-[370px] mx-auto'>
-      <div className='bg-[#D9D9D9] w-auto h-[35vh]' style={{ backgroundImage: `url(${imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}> 
-      </div>
-      <div className="border min-width border-[#D9D9D9] flex flex-col justify-center p-9 gap-5">
-        <h3 className='text-[#F5B301] font-md text-center'><b>{title}</b></h3>
-        <div>
-          <p className='text-base text-justify'>{description}</p> 
-        </div>
-        <Button variant="solid" className="w-[14rem] mx-auto">View Project</Button>
+    <div
+      className={`border border-[#F5B301] bg-[#1E2329] rounded-xl shadow-md overflow-hidden ${
+        viewMode === "list" ? "flex flex-col sm:flex-row" : ""
+      }`}
+    >
+      {/* Image */}
+      <div
+        className={`w-full ${
+          viewMode === "list" ? "sm:w-1/2 h-[200px]" : "h-[220px]"
+        } bg-cover bg-center`}
+        style={{ backgroundImage: `url(${imageSrc})` }}
+      />
+
+      {/* Info */}
+      <div className="p-5 flex flex-col gap-4 sm:w-full">
+        <h3
+          className={`text-[#F5B301] font-bold text-lg ${
+            viewMode === "list" ? "text-left" : "text-center"
+          }`}
+        >
+          {title}
+        </h3>
+        <p className="text-sm text-[#FDFDFD] text-justify">{description}</p>
+
+        <Link to={link}>
+          <div
+            className={`w-full mt-2 flex ${
+              viewMode === "list" ? "justify-start" : "justify-center"
+            }`}
+          >
+            <Button variant="solid" className="w-[12rem]">
+              View Project
+            </Button>
+          </div>
+        </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCards
+export default ProjectCards;

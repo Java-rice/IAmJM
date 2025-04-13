@@ -130,13 +130,13 @@ const About = () => {
               >
                 {skillList.map((tool, index) => (
                   <ToolCard
-                  key={index}
-                  imgSrc={tool.imgSrc}
-                  title={tool.title}
-                  color={tool.color}
-                  text_color={tool.text_color}
-                  onClick={() => setSelectedTool(tool)}
-                />
+                    key={index}
+                    imgSrc={tool.imgSrc}
+                    title={tool.title}
+                    color={tool.color}
+                    text_color={tool.text_color}
+                    onClick={() => setSelectedTool(tool)}
+                  />
                 ))}
               </motion.div>
             </div>
@@ -146,31 +146,50 @@ const About = () => {
 
       {/* Overlay for Projects */}
       {selectedTool && selectedTool.projects?.length > 0 && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="bg-[#1E2329] border border-[#F5B301] p-6 rounded-2xl max-w-md w-full mx-4 shadow-2xl relative">
-            <h3 className="text-lg font-semibold text-[#F5B301] text-center mb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="relative w-full max-w-md bg-[#1E2329] border border-[#F5B301] rounded-2xl shadow-2xl p-6 animate-fade-in">
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedTool(null)}
+              className="absolute top-3 right-4 text-[#F5B301] hover:text-red-400 transition-colors"
+              aria-label="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-[#F5B301] text-center mb-4">
               Projects using {selectedTool.title}
             </h3>
-            <ul className="text-white space-y-3 text-base max-h-60 overflow-y-auto px-1">
+
+            {/* Project links */}
+            <ul className="space-y-3 max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-[#F5B301]/80 scrollbar-track-transparent pr-1">
               {selectedTool.projects.map((project, index) => (
                 <li key={index}>
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline block text-center"
+                    className="block text-white text-base text-center hover:underline hover:text-[#F5B301] transition-colors"
                   >
                     • {project.title}
                   </a>
                 </li>
               ))}
             </ul>
-            <button
-              onClick={() => setSelectedTool(null)}
-              className="absolute top-2 right-3 text-sm text-gray-400 hover:text-red-400"
-            >
-              ✕
-            </button>
           </div>
         </div>
       )}
