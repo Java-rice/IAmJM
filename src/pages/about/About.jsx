@@ -12,7 +12,7 @@ const About = () => {
   return (
     <div className="relative px-6 md:px-[10%] py-24 text-[#FDFDFD] font-rubik flex flex-col items-center gap-16 overflow-hidden bg-[#1E2329]">
       {/* About Me Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center w-full">
         {/* Text */}
         <motion.div
           className="lg:col-span-5 flex flex-col gap-5 text-center lg:text-left"
@@ -115,7 +115,7 @@ const About = () => {
       {/* Skills Section */}
       <div className="w-full flex flex-col items-center gap-12">
         <h3 className="text-3xl font-bold text-[#F5B301]">Skills & Tools</h3>
-        <div className="flex flex-col gap-12 w-full max-w-6xl">
+        <div className="flex flex-col gap-12 w-full">
           {Object.entries(tools).map(([category, skillList]) => (
             <div key={category} className="w-full">
               <h4 className="text-xl font-semibold mb-4 text-center text-white">
