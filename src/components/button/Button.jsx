@@ -15,11 +15,13 @@ const buttonVariants = cva(
         long_solid:
           "bg-[#F5B301] text-sm py-3 w-64 text-[#2A2E34] font-bold hover:bg-[#FED154] transition duration-300",
         bordered:
-          "bg-[#2A2E34] text-sm py-3 px-6 content-box text-[#F5B301] border-[#F5B301] border-2 font-bold hover:bg-[#FED154]  hover:text-[#2A2E34] transition duration-300" 
-        
+          "bg-[#2A2E34] text-sm py-3 px-6 content-box text-[#F5B301] border-[#F5B301] border-2 font-bold hover:bg-[#FED154]  hover:text-[#2A2E34] transition duration-300",
+        solid_image:
+          "bg-[#F5B301] text-sm py-3 content-box text-[#2A2E34] border-[#F5B301] border-2 font-bold hover:bg-[#FED154] transition duration-300",
       },
       size: {
         default: "h-10 py-2 px-4",
+        default_image: "h-10 py-2 ",
         sm: "h-9 px-2",
         lg: "h-11 px-8",
       },
@@ -27,12 +29,12 @@ const buttonVariants = cva(
         default: "w-auto",
         sm: "w-10 px-auto",
         lg: "w-15 px-auto",
-      }
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
-      width: "default"
+      width: "default",
     },
   }
 );

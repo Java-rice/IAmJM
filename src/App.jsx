@@ -7,7 +7,7 @@ import Content from "@src/pages/Content";
 function App() {
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#1E2329] no-zoom-out">
+    <div className="flex flex-col h-full min-h-screen bg-[#1E2329] no-zoom-out">
       <Name />
       <Content/>
       <Footer className="" />

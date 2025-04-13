@@ -1,34 +1,86 @@
-import React from 'react'
-import Name from '../logo/Name'
+import React from "react";
+import Name from "../logo/Name";
 import Facebook from "@src/assets/Facebook.png";
 import Instagram from "@src/assets/Instagram.png";
 import LinkedIn from "@src/assets/LinkedIn.png";
-import Github from "@src/assets/GitHub.png"
+import Github from "@src/assets/GitHub.png";
 
 const Footer = () => {
   return (
-    <div className='w-full bg-[#3B4046] py-6 text-[#FDFDFD] text-l px-[10%] flex lg:flex-row flex-col gap-5 justify-between align-middle'>
-      <div className='text-center lg:text-left'>
-        <div className='lg:relative lg:right-4'>
-          <Name />
+    <footer className="w-full bg-[#3B4046] text-[#FDFDFD] px-6 md:px-[10%] py-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between items-start">
+        {/* Left Side */}
+        <div className="flex flex-col gap- text-center md:text-left">
+          <div className="w-fit mx-auto md:mx-0">
+            <Name />
+          </div>
+          <p className="text-sm opacity-80">Bocaue, Bulacan</p>
+          <p className="text-sm opacity-80">© 2024 John Mark Peroche</p>
         </div>
-        <div className='w-100 lg:right-4'>
-          <p className='text-xs'>Bocaue, Bulacan</p>
-          <p className='text-xs'>@ 2024 John Mark Peroche</p>
-        </div>
-      </div>
-      <div className='lg:text-right text-center'>
-        <h4 className='text-md'><b>REACH OUT</b></h4>
-        <p className='text-xs'>johnmark.p.peroche@gmail.com</p>
-        <ul className="list-none flex flex-row align-center justify-center lg:justify-end gap-2">
-          <li><a className="cursor-pointer" href="https://www.instagram.com/jamaaaaaaaaaaaak/"><img src="./Instagram.png" className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://www.facebook.com/johnmark.pacaldoperoche/"><img src={Facebook} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://github.com/Java-rice"><img src={Github} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
-          <li><a className="cursor-pointer" href="https://www.linkedin.com/in/john-mark-peroche-61a756229/"><img src={LinkedIn} className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300' style={{ width: '1.4rem', height: '1.4rem' }}/></a></li>
-        </ul>
-      </div>
-    </div>
-  );
-}
 
-export default Footer
+        {/* Right Side */}
+        <div className="flex flex-col text-center md:text-right items-center md:items-end">
+          <h4 className="text-lg font-semibold tracking-wide">Reach Out</h4>
+          <p className="text opacity-80">johnmark.p.peroche@gmail.com</p>
+          <p className="text opacity-80">perochejmp@gmail.com</p>
+          <ul className="flex gap-4">
+            <li>
+              <a
+                href="https://www.instagram.com/jamaaaaaaaaaaaak/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={Instagram}
+                  alt="Instagram"
+                  className="w-6 h-6 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/johnmark.pacaldoperoche/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={Facebook}
+                  alt="Facebook"
+                  className="w-6 h-6 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Java-rice"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={Github}
+                  alt="GitHub"
+                  className="w-6 h-6 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/john-mark-peroche-61a756229/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={LinkedIn}
+                  alt="LinkedIn"
+                  className="w-6 h-6 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
