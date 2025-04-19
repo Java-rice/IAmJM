@@ -38,6 +38,7 @@ const Blogs = () => {
                     id={blog.id}
                     title={blog.title}
                     date={blog.date}
+                    image={blog.image}
                     description={blog.summary}
                     onReadClick={() => setActiveBlogId(blog.id)}
                   />
