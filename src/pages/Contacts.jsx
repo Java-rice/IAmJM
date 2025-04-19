@@ -72,7 +72,7 @@ const Contacts = () => {
   };
 
   return (
-    <div className="px-6 md:px-20 py-24 font-rubik text-white">
+    <div className="px-6 md:px-12 py-10 lg:px-24 font-rubik text-white max-w-screen-xl mx-auto">
       <div className="text-center my-8">
         <h1 className="text-3xl md:text-4xl font-bold tracking-wide text-[#F5B301]">
           REACH ME OUT
@@ -86,7 +86,7 @@ const Contacts = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="grid md:grid-cols-2 gap-12 bg-[#2A2E34] p-8 rounded-2xl shadow-xl"
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#2A2E34] p-6 md:p-10 rounded-2xl shadow-xl"
       >
         <div className="flex flex-col gap-6">
           <h2 className="text-2xl font-semibold text-[#F5B301]">SEND ME A MESSAGE</h2>
@@ -144,7 +144,7 @@ const Contacts = () => {
         </div>
 
         <div className="flex flex-col justify-between text-justify text-base leading-relaxed text-gray-200 gap-6">
-          <div className="pt-16">
+          <div className="pt-4 md:pt-16">
             <p>
               I'm always open to connecting with passionate individuals and creative minds.
               Whether you're starting a new project, need a developer for hire, or just
@@ -156,10 +156,9 @@ const Contacts = () => {
             </p>
           </div>
 
-          {/* Socials Section */}
           <div className="mt-4">
             <h4 className="text-[#F5B301] font-semibold mb-2">You can also find me here:</h4>
-            <div className="flex flex-row gap-4 mt-2">
+            <div className="flex flex-wrap gap-4 mt-2">
               <a
                 href="https://www.instagram.com/jamaaaaaaaaaaaak/"
                 target="_blank"
