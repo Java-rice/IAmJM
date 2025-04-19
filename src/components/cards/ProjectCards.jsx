@@ -1,9 +1,8 @@
 import React from "react";
 import { Button } from "@src/components/button/Button";
-import { Link } from "react-router-dom";
 
-const ProjectCards = ({ project, viewMode }) => {
-  const { title, description, images, link } = project;
+const ProjectCards = ({ project, viewMode, onViewClick }) => {
+  const { title, description, images } = project;
   const imageSrc = images?.[0];
 
   return (
@@ -31,17 +30,15 @@ const ProjectCards = ({ project, viewMode }) => {
         </h3>
         <p className="text-sm text-[#FDFDFD] text-justify">{description}</p>
 
-        <Link to={link}>
-          <div
-            className={`w-full mt-2 flex ${
-              viewMode === "list" ? "justify-start" : "justify-center"
-            }`}
-          >
-            <Button variant="solid" className="w-[12rem]">
-              View Project
-            </Button>
-          </div>
-        </Link>
+        <div
+          className={`w-full mt-2 flex ${
+            viewMode === "list" ? "justify-start" : "justify-center"
+          }`}
+        >
+          <Button variant="solid" className="w-[12rem]" onClick={onViewClick}>
+            View Project
+          </Button>
+        </div>
       </div>
     </div>
   );

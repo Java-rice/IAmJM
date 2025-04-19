@@ -2,17 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import ProjectCards from "@src/components/cards/ProjectCards";
 import projectData from "@src/contents/projects/project";
 import { Button } from "@src/components/button/Button";
+import { FolderSearch, ArrowLeft } from "lucide-react";
 
 const viewOptions = ["grid", "list", "carousel"];
-const allCategories = [
-  "All",
-  ...new Set(projectData.flatMap((p) => p.categories)),
-];
+const allCategories = ["All", ...new Set(projectData.flatMap((p) => p.categories))];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState("grid");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeProjectSlug, setActiveProjectSlug] = useState(null);
+
   const carouselRef = useRef(null);
 
   const filteredProjects =
@@ -20,16 +20,15 @@ const Projects = () => {
       ? projectData
       : projectData.filter((p) => p.categories.includes(selectedCategory));
 
+  const selectedProject = projectData.find((p) => p.link === activeProjectSlug);
+
   const scrollToIndex = (index) => {
     if (index < 0 || index >= filteredProjects.length) return;
     setActiveIndex(index);
     const container = carouselRef.current;
     if (!container) return;
     const slotWidth = container.offsetWidth / 3;
-    container.scrollTo({
-      left: slotWidth * index,
-      behavior: "smooth",
-    });
+    container.scrollTo({ left: slotWidth * index, behavior: "smooth" });
   };
 
   const handleScroll = () => {
@@ -38,11 +37,7 @@ const Projects = () => {
     const slotWidth = container.offsetWidth / 3;
     const scrollPosition = container.scrollLeft;
     const index = Math.round(scrollPosition / slotWidth);
-    if (
-      index !== activeIndex &&
-      index >= 0 &&
-      index < filteredProjects.length
-    ) {
+    if (index !== activeIndex && index >= 0 && index < filteredProjects.length) {
       setActiveIndex(index);
     }
   };
@@ -65,178 +60,152 @@ const Projects = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex, viewMode]);
 
+  const handleBack = () => {
+    setActiveProjectSlug(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="px-[10%] py-10 text-[#FDFDFD] font-rubik flex flex-col gap-6">
-      {/* Header */}
-      <div className="text-center">
-        <h1 className="text-3xl font-bold tracking-wide">
-          WORKS <span className="text-[#F5B301]">&</span> PROJECTS
-        </h1>
-      </div>
-
-      {/* View Toggle */}
-      <div className="flex justify-center gap-3 flex-wrap">
-        {viewOptions.map((option) => (
-          <button
-            key={option}
-            onClick={() => setViewMode(option)}
-            className={`px-4 py-2 text-sm border rounded-md transition ${
-              viewMode === option
-                ? "bg-[#F5B301] text-[#1E2329] font-semibold"
-                : "border-[#F5B301] text-[#FDFDFD]"
-            }`}
-          >
-            {option.charAt(0).toUpperCase() + option.slice(1)} View
-          </button>
-        ))}
-      </div>
-
-      {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-3">
-        {allCategories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 text-sm rounded-xl border transition ${
-              selectedCategory === category
-                ? "bg-[#F5B301] text-[#1E2329] font-semibold"
-                : "border-[#F5B301] text-[#FDFDFD]"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      {/* Carousel View */}
-      {viewMode === "carousel" ? (
-        <div className="relative w-full">
-          {/* Navigation Arrows */}
-          <button
-            onClick={goToPrevious}
-            disabled={activeIndex === 0}
-            className={`absolute left-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-r-lg p-2 ${
-              activeIndex === 0
-                ? "opacity-30 cursor-not-allowed"
-                : "opacity-70 hover:opacity-100"
-            }`}
-            aria-label="Previous project"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <button
-            onClick={goToNext}
-            disabled={activeIndex === filteredProjects.length - 1}
-            className={`absolute right-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-l-lg p-2 ${
-              activeIndex === filteredProjects.length - 1
-                ? "opacity-30 cursor-not-allowed"
-                : "opacity-70 hover:opacity-100"
-            }`}
-            aria-label="Next project"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          {/* Carousel Container with Fixed Width Items */}
-          <div
-            className="relative overflow-x-auto w-full"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            <div
-              ref={carouselRef}
-              className="flex overflow-x-auto scroll-smooth no-scrollbar py-8"
-              onScroll={handleScroll}
-              style={{
-                scrollbarWidth: "none",
-                msOverflowStyle: "none",
-                scrollSnapType: "x mandatory",
-              }}
-            >
-              {/* Add padding at the beginning so first card can be centered */}
-              <div className="shrink-0 w-1/3"></div>
-
-              {filteredProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className={`shrink-0 w-1/3 px-4 transition-all duration-300 ease-in-out flex justify-center items-center scroll-snap-align-center`}
-                  style={{ scrollSnapAlign: "center" }}
-                >
-                  <div
-                    className={`w-full transition-all duration-300 ease-in-out ${
-                      index === activeIndex
-                        ? "scale-110 opacity-100"
-                        : "scale-90 opacity-50"
-                    }`}
-                  >
-                    <ProjectCards project={project} viewMode="grid" />
-                  </div>
-                </div>
-              ))}
-
-              {/* Add padding at the end so last card can be centered */}
-              <div className="shrink-0 w-1/3"></div>
-            </div>
+    <div className="px-6 md:px-[10%] py-12 text-[#FDFDFD] font-rubik flex flex-col gap-6">
+      {!activeProjectSlug ? (
+        <>
+          <div className="text-center">
+            <h1 className="text-3xl font-bold tracking-wide">
+              WORKS <span className="text-[#F5B301]">&</span> PROJECTS
+            </h1>
           </div>
 
-          {/* Dot Indicators */}
-          <div className="flex justify-center mt-4 gap-2">
-            {filteredProjects.map((_, index) => (
+          <div className="flex justify-end">
+            <select
+              value={viewMode}
+              onChange={(e) => setViewMode(e.target.value)}
+              className="px-4 py-2 text-sm rounded-md border border-[#F5B301] bg-[#1E2329] text-[#F5B301] font-medium focus:outline-none focus:ring-2 focus:ring-[#F5B301]"
+            >
+              {viewOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option.charAt(0).toUpperCase() + option.slice(1)} View
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {allCategories.map((category) => (
               <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === activeIndex
-                    ? "bg-[#F5B301] scale-125"
-                    : "bg-[#FDFDFD]/40 hover:bg-[#F5B301]/60"
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 text-sm rounded-xl border transition ${
+                  selectedCategory === category
+                    ? "bg-[#F5B301] text-[#1E2329] font-semibold"
+                    : "border-[#F5B301] text-[#FDFDFD]"
                 }`}
-                onClick={() => scrollToIndex(index)}
-                aria-label={`Go to project ${index + 1}`}
-              />
+              >
+                {category}
+              </button>
             ))}
           </div>
-        </div>
+
+          {filteredProjects.length === 0 ? (
+            <div className="flex flex-col items-center text-center gap-4 mt-16 text-gray-400">
+              <FolderSearch size={48} className="text-[#F5B301]" />
+              <p>No projects found for the selected category.</p>
+            </div>
+          ) : viewMode === "carousel" ? (
+            <div className="relative w-full">
+              <button
+                onClick={goToPrevious}
+                disabled={activeIndex === 0}
+                className={`absolute left-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-r-lg p-2 ${
+                  activeIndex === 0
+                    ? "opacity-30 cursor-not-allowed"
+                    : "opacity-70 hover:opacity-100"
+                }`}
+              >
+                ←
+              </button>
+              <button
+                onClick={goToNext}
+                disabled={activeIndex === filteredProjects.length - 1}
+                className={`absolute right-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-l-lg p-2 ${
+                  activeIndex === filteredProjects.length - 1
+                    ? "opacity-30 cursor-not-allowed"
+                    : "opacity-70 hover:opacity-100"
+                }`}
+              >
+                →
+              </button>
+              <div className="relative overflow-x-auto w-full no-scrollbar">
+                <div
+                  ref={carouselRef}
+                  className="flex overflow-x-auto scroll-smooth no-scrollbar py-8"
+                  onScroll={handleScroll}
+                  style={{ scrollSnapType: "x mandatory" }}
+                >
+                  <div className="shrink-0 w-1/3" />
+                  {filteredProjects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="shrink-0 w-1/3 px-4 flex justify-center items-center scroll-snap-align-center"
+                      style={{ scrollSnapAlign: "center" }}
+                    >
+                      <div
+                        className={`w-full transition duration-300 ${
+                          index === activeIndex
+                            ? "scale-110 opacity-100"
+                            : "scale-90 opacity-50"
+                        }`}
+                      >
+                        <ProjectCards
+                          project={project}
+                          viewMode="grid"
+                          onViewClick={() => setActiveProjectSlug(project.link)}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                  <div className="shrink-0 w-1/3" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div
+              className={`w-full ${
+                viewMode === "grid"
+                  ? "grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  : "flex flex-col gap-8"
+              }`}
+            >
+              {filteredProjects.map((project, index) => (
+                <ProjectCards
+                  key={index}
+                  project={project}
+                  viewMode={viewMode}
+                  onViewClick={() => setActiveProjectSlug(project.link)}
+                />
+              ))}
+            </div>
+          )}
+        </>
       ) : (
-        <div
-          className={`w-full ${
-            viewMode === "grid"
-              ? "grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-              : "flex flex-col gap-8"
-          }`}
-        >
-          {filteredProjects.map((project, index) => (
-            <ProjectCards key={index} project={project} viewMode={viewMode} />
-          ))}
+        <div className="relative animate-fade-in">
+          <div className="flex justify-start mb-6">
+            <Button
+              variant="long_outline"
+              onClick={handleBack}
+              className="flex items-center gap-2"
+            >
+              <ArrowLeft size={18} /> Back to Projects
+            </Button>
+          </div>
+
+          {selectedProject?.component ? (
+            selectedProject.component
+          ) : (
+            <div className="text-center text-gray-400 py-12">
+              <FolderSearch className="mx-auto mb-4 text-[#F5B301]" size={36} />
+              <p>Project not found or unavailable.</p>
+            </div>
+          )}
         </div>
       )}
     </div>

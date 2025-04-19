@@ -1,52 +1,75 @@
-import React from "react";
-import Navigation from "@src/components/navigation/Navigation";
+import React, { useState } from "react";
 import BlogCards from "@src/components/cards/BlogCards";
+import { blogData } from "@src/contents/blogs/blogData";
+import { Button } from "@src/components/button/Button";
+import { ArrowLeft, BookOpenCheck } from "lucide-react"; // Lucide icons
 
 const Blogs = () => {
-  const blogData = [
-    {
-      title: "Exploring the Future of Technology",
-      date: "August 22, 2024",
-      image: "../../../assets/sampleplaceholder.png",
-      content: "In the rapidly evolving world of technology, we are witnessing groundbreaking innovations that are reshaping the future. From artificial intelligence to quantum computing, the potential of these advancements is limitless. This blog explores the latest trends and predicts what the future might hold for various tech sectors, including the impact on our daily lives and the global economy."
-    },
-    {
-      title: "The Rise of Sustainable Practices",
-      date: "August 23, 2024",
-      image: "../../../assets/sampleplaceholder.png",
-      content: "Sustainability is becoming a central theme across industries as businesses and individuals alike strive to reduce their environmental impact. This article delves into the importance of adopting sustainable practices, highlighting successful case studies, and offering practical tips for integrating eco-friendly methods into everyday life. Learn how small changes can contribute to a larger global effort."
-    },
-    {
-      title: "Navigating the Challenges of Remote Work",
-      date: "August 24, 2024",
-      image: "../../../assets/sampleplaceholder.png",
-      content: "Remote work has transformed the traditional work environment, bringing both opportunities and challenges. This blog addresses the key issues faced by remote workers, including maintaining productivity, work-life balance, and staying connected with colleagues. Discover strategies for overcoming these challenges and making the most of the remote work experience."
-    },
-    {
-      title: "The Evolution of Digital Marketing Strategies",
-      date: "August 25, 2024",
-      image: "../../../assets/sampleplaceholder.png",
-      content: "Digital marketing continues to evolve with advancements in technology and changes in consumer behavior. This article explores the latest strategies in digital marketing, including the use of social media, data analytics, and personalized content. Understand how businesses can adapt to these changes to effectively reach and engage their target audience."
-    },
-  ];
-    
-  
+  const [activeBlogId, setActiveBlogId] = useState(null);
+
+  const selectedBlog = blogData.find((b) => b.id === activeBlogId);
+
+  const handleBack = () => {
+    setActiveBlogId(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="px-[10%] lg:gap-10 gap-2 text-[#FDFDFD] font-rubik flex flex-col justify-center items-center h-auto py-[3%]">
-      <div className="w-[100%] text-center">
-        <h1 className="font-bold text-3xl">BLOGS</h1>
-      </div>
-      <div className="w-[100%] flex flex-col justify-center gap-14 lg:align-middle lg:py-0 py-[3%] pb-[%10] h-auto overflow-auto">
-        {blogData.map((blog, index) => (
-          <BlogCards
-            key={index}
-            title={blog.title}
-            date={blog.date}
-            img={blog.image}
-            description={blog.content}
-          />
-        ))}
-      </div>
+    <div className="px-6 md:px-[10%] py-12 md:py-[6%] font-rubik text-white">
+      {!activeBlogId ? (
+        <>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-wide text-[#F5B301] mb-10">
+            BLOGS
+          </h1>
+
+          {blogData.length === 0 ? (
+            <div className="text-center text-lg mt-20 text-gray-400 flex flex-col items-center gap-4">
+              <BookOpenCheck size={48} className="text-[#F5B301]" />
+              <p>No blog posts available yet. Please check back soon!</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-16">
+              {blogData.map((blog) => (
+                <div
+                  key={blog.id}
+                  className="transition-transform duration-300 transform hover:scale-[1.01]"
+                >
+                  <BlogCards
+                    id={blog.id}
+                    title={blog.title}
+                    date={blog.date}
+                    description={blog.summary}
+                    onReadClick={() => setActiveBlogId(blog.id)}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="relative animate-fade-in">
+          <div className="flex justify-start mb-6">
+            <Button
+              variant="long_outline"
+              onClick={handleBack}
+              className="flex items-center gap-2"
+            >
+              <ArrowLeft size={18} /> Back to Blogs
+            </Button>
+          </div>
+
+          <div className="rounded-lg shadow-md bg-[#1e1e1e] p-6 md:p-10">
+            {selectedBlog?.component ? (
+              selectedBlog.component
+            ) : (
+              <div className="text-gray-400 text-center py-10">
+                <BookOpenCheck className="mx-auto mb-4 text-[#F5B301]" size={36} />
+                <p>This blog post is currently unavailable.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
