@@ -27,6 +27,26 @@ const projectData = [
     gif: "/assets/todo_demo.gif",
     video: "https://www.youtube.com/embed/sample_todo_app_demo",
     component: <TodoApp />
+  },
+  {
+    title: "To-Do App",
+    description: "An intuitive task manager with live editing, animations, and persistent storage.",
+    categories: ["Web App", "Productivity"],
+    images: ["path_to_todo1.jpg", "path_to_todo2.jpg"],
+    toolsUsed: ["React", "Tailwind CSS", "Framer Motion", "LocalStorage"],
+    gif: "/assets/todo_demo.gif",
+    video: "https://www.youtube.com/embed/sample_todo_app_demo",
+    component: <TodoApp />
+  },
+  {
+    title: "To-Do App",
+    description: "An intuitive task manager with live editing, animations, and persistent storage.",
+    categories: ["Web App", "Productivity"],
+    images: ["path_to_todo1.jpg", "path_to_todo2.jpg"],
+    toolsUsed: ["React", "Tailwind CSS", "Framer Motion", "LocalStorage"],
+    gif: "/assets/todo_demo.gif",
+    video: "https://www.youtube.com/embed/sample_todo_app_demo",
+    component: <TodoApp />
   }
 ];
 
