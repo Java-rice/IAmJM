@@ -5,7 +5,7 @@ import profileImage from "@src/assets/profileimage.png";
 import Resume from "@src/assets/Resume.png";
 import tools from "@src/data/Tools";
 import { motion } from "framer-motion";
-
+import ExperienceData  from "@src/data/ExperienceData";
 const About = () => {
   const [selectedTool, setSelectedTool] = useState(null);
 
@@ -68,6 +68,7 @@ const About = () => {
             </Button>
           </div>
         </motion.div>
+      
 
         {/* Profile Image with Geometric Animation */}
         <motion.div
@@ -111,6 +112,78 @@ const About = () => {
           />
         </motion.div>
       </div>
+
+      {/* Experience & Organizations Section */}
+      <div className="w-full flex flex-col items-center gap-16">
+          {/* Experience */}
+          <motion.div
+            className="w-full flex flex-col gap-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-primary text-center">
+              Experience
+            </h3>
+            <div className="grid gap-8 sm:grid-cols-2">
+              {ExperienceData.experience.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-secondary border-l-[6px] border-primary rounded-xl p-6 shadow-lg hover:scale-[1.02] transition-transform duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <h4 className="text-xl font-bold text-[#FDFDFD]">
+                    {item.role}
+                  </h4>
+                  <p className="text-primary font-semibold mt-1">
+                    {item.organization}
+                  </p>
+                  <p className="text-[#D1D5DB] text-sm italic mb-3">
+                    {item.duration}
+                  </p>
+                  <p className="text-[#D1D5DB] leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Organizations */}
+          <motion.div
+            className="w-full flex flex-col gap-10 pt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-primary text-center">
+              Organizations Joined
+            </h3>
+            <div className="grid gap-8 sm:grid-cols-2">
+              {ExperienceData.organizations.map((org, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-surface border-l-[6px] border-tertiary rounded-xl p-6 shadow-lg hover:scale-[1.02] transition-transform duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <h4 className="text-xl font-bold text-[#FDFDFD]">
+                    {org.name}
+                  </h4>
+                  <p className="text-tertiary font-semibold mt-1">{org.role}</p>
+                  <p className="text-[#D1D5DB] text-sm italic">
+                    {org.duration}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
       {/* Skills Section */}
       <div className="w-full flex flex-col items-center gap-12">
