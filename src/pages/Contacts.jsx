@@ -5,7 +5,7 @@ import Facebook from "@src/assets/Facebook.png";
 import Instagram from "@src/assets/Instagram.png";
 import LinkedIn from "@src/assets/LinkedIn.png";
 import Github from "@src/assets/GitHub.png";
-
+import {toast} from "react-toastify"
 const Contacts = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -47,17 +47,24 @@ const Contacts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-
+  
     try {
-      const response = await fetch("https://your-email-api-endpoint.com/send", {
+      const response = await fetch("https://formspree.io/f/myzervvl", {
         method: "POST",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
-
+  
       if (response.ok) {
+        toast.success("Your message has been sent successfully!")
         setSuccessMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", phone: "", message: "" });
         setErrors({});
@@ -65,6 +72,7 @@ const Contacts = () => {
         throw new Error("Failed to send the message.");
       }
     } catch (error) {
+      toast.error("Your message has been sent successfully!")
       setErrors({
         submit: "There was an issue sending your message. Please try again later.",
       });
