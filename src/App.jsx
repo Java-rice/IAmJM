@@ -15,6 +15,9 @@ import Blogs from "@src/pages/Blogs";
 import BlogDetails from "@src/pages/BlogDetails";
 import Contacts from "@src/pages/Contacts";
 import NotFound from "@src/pages/NotFound"; 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   return (
@@ -37,6 +40,16 @@ function App() {
         </Routes>
       </Router>
       <Footer />
+      {/* Toast container is placed here to make it accessible globally */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeButton={true}
+        pauseOnHover={true}
+        theme="colored"
+      />
     </div>
   );
 }
