@@ -5,7 +5,10 @@ import { Button } from "@src/components/button/Button";
 import { FolderSearch, ArrowLeft } from "lucide-react";
 
 const viewOptions = ["grid", "list", "carousel"];
-const allCategories = ["All", ...new Set(projectData.flatMap((p) => p.categories))];
+const allCategories = [
+  "All",
+  ...new Set(projectData.flatMap((p) => p.categories)),
+];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -22,28 +25,33 @@ const Projects = () => {
 
   const selectedProject = projectData.find((p) => p.link === activeProjectSlug);
 
-  const scrollToIndex = (index) => {
-    if (index < 0 || index >= filteredProjects.length) return;
-    setActiveIndex(index);
-    const container = carouselRef.current;
-    if (!container) return;
-    const slotWidth = container.offsetWidth / 3;
-    container.scrollTo({ left: slotWidth * index, behavior: "smooth" });
-  };
 
-  const handleScroll = () => {
+  const scrollToIndex = (index) => {
     const container = carouselRef.current;
     if (!container) return;
-    const slotWidth = container.offsetWidth / 3;
-    const scrollPosition = container.scrollLeft;
-    const index = Math.round(scrollPosition / slotWidth);
-    if (index !== activeIndex && index >= 0 && index < filteredProjects.length) {
+
+    const slide = container.children[index + 1]; 
+    if (slide) {
+      slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       setActiveIndex(index);
     }
   };
 
-  const goToPrevious = () => scrollToIndex(activeIndex - 1);
-  const goToNext = () => scrollToIndex(activeIndex + 1);
+  const goToPrevious = () => {
+    if (activeIndex > 0) {
+      scrollToIndex(activeIndex - 1);
+    }
+  };
+
+  const goToNext = () => {
+    if (activeIndex < filteredProjects.length - 1) {
+      scrollToIndex(activeIndex + 1);
+    }
+  };
+
+  useEffect(() => {
+    scrollToIndex(0); 
+  }, []);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -112,6 +120,7 @@ const Projects = () => {
             </div>
           ) : viewMode === "carousel" ? (
             <div className="relative w-full">
+              {/* Left Arrow */}
               <button
                 onClick={goToPrevious}
                 disabled={activeIndex === 0}
@@ -123,6 +132,8 @@ const Projects = () => {
               >
                 ←
               </button>
+
+              {/* Right Arrow */}
               <button
                 onClick={goToNext}
                 disabled={activeIndex === filteredProjects.length - 1}
@@ -134,25 +145,29 @@ const Projects = () => {
               >
                 →
               </button>
+
+              {/* Scrollable Carousel */}
               <div className="relative overflow-x-auto w-full no-scrollbar">
                 <div
                   ref={carouselRef}
                   className="flex overflow-x-auto scroll-smooth no-scrollbar py-8"
-                  onScroll={handleScroll}
                   style={{ scrollSnapType: "x mandatory" }}
                 >
-                  <div className="shrink-0 w-1/3" />
+                  {/* Padding Left */}
+                  <div className="shrink-0 w-[5%] sm:w-[10%]" />
+
+                  {/* Projects */}
                   {filteredProjects.map((project, index) => (
                     <div
                       key={index}
-                      className="shrink-0 w-1/3 px-4 flex justify-center items-center scroll-snap-align-center"
+                      className="shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4 flex justify-center items-center scroll-snap-align-center"
                       style={{ scrollSnapAlign: "center" }}
                     >
                       <div
                         className={`w-full transition duration-300 ${
                           index === activeIndex
-                            ? "scale-110 opacity-100"
-                            : "scale-90 opacity-50"
+                            ? "scale-105 opacity-100"
+                            : "scale-95 opacity-60"
                         }`}
                       >
                         <ProjectCards
@@ -163,7 +178,9 @@ const Projects = () => {
                       </div>
                     </div>
                   ))}
-                  <div className="shrink-0 w-1/3" />
+
+                  {/* Padding Right */}
+                  <div className="shrink-0 w-[5%] sm:w-[10%]" />
                 </div>
               </div>
             </div>
