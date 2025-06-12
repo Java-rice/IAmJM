@@ -138,6 +138,39 @@ const About = () => {
         </motion.div>
       </div>
 
+      {/* Education Section */}
+      <motion.div
+        className="w-full flex flex-col gap-10 pt-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="text-3xl font-bold text-primary text-center">
+          Education
+        </h3>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {ExperienceData.education.map((edu, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#2A2F36] border-l-[6px] border-[#F5B301] rounded-xl p-6 shadow-lg hover:scale-[1.02] transition-transform duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <h4 className="text-xl font-bold text-[#FDFDFD]">{edu.school}</h4>
+              <p className="text-primary font-semibold mt-1">{edu.degree}</p>
+              <p className="text-[#D1D5DB] text-sm italic mb-3">
+                {edu.duration}
+              </p>
+              <p className="text-[#D1D5DB] leading-relaxed">
+                {edu.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Experience & Organizations Section */}
       <div className="w-full flex flex-col items-center gap-16">
         {/* Experience */}

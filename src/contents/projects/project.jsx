@@ -1,5 +1,6 @@
 import WeatherApp from "@src/contents/projects/WeatherApp";
 import TodoApp from "@src/contents/projects/TodoApp";
+import ISchedApp from "@src/contents/projects/ISchedApp";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -8,15 +9,27 @@ const slugify = (title) =>
     .replace(/^-+|-+$/g, "");
 
 const projectData = [
+  {
+    title: "I-SCHED",
+    description:
+      "I-SCHED is a simple scheduling system developed by BSCS 2-5 students of PUP that automates job scheduling using Earliest Deadline First, Merge Sort, and the Fractional Knapsack algorithm. It efficiently organizes tasks based on deadlines, idle time, and importance through a user-friendly interface that allows real-time input, tracking, and adjustment.",
+    categories: ["Desktop App", "Productivity"],
+    images: ["./projects/isched/Isched_1.png", "path_to_weather2.jpg"],
+    toolsUsed: ["Python", "Tkinter"],
+    gif: null,
+    video: "",
+    component: <ISchedApp />,
+  },
   // {
   //   title: "Weather App",
-  //   description: "A responsive weather forecasting app that displays real-time temperature, humidity, and location-based data.",
+  //   description:
+  //     "A responsive weather forecasting app that displays real-time temperature, humidity, and location-based data.",
   //   categories: ["Web App", "API Integration"],
   //   images: ["path_to_weather1.jpg", "path_to_weather2.jpg"],
   //   toolsUsed: ["React", "OpenWeatherMap API", "Tailwind CSS"],
   //   gif: null,
   //   video: "https://www.youtube.com/embed/sample_weather_app_demo",
-  //   component: <WeatherApp />
+  //   component: <WeatherApp />,
   // },
   // {
   //   title: "To-Do App",
