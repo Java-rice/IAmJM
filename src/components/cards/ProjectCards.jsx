@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@src/components/button/Button";
 
 const ProjectCards = ({ project, viewMode, onViewClick }) => {
-  const { title, description, images } = project;
+  const { title, description, images, date } = project;
   const imageSrc = images?.[0];
 
   return (
@@ -21,13 +21,16 @@ const ProjectCards = ({ project, viewMode, onViewClick }) => {
 
       {/* Info */}
       <div className="p-5 flex flex-col gap-4 sm:w-full">
-        <h3
-          className={`text-[#F5B301] font-bold text-lg ${
-            viewMode === "list" ? "text-left" : "text-center"
-          }`}
-        >
-          {title}
-        </h3>
+        <div className="space-y-1">
+          <h3
+            className={`text-[#F5B301] font-bold text-lg ${
+              viewMode === "list" ? "text-left" : "text-center"
+            }`}
+          >
+            {title}
+          </h3>
+          <p className="text-sm italic text-[#FDFDFD] text-center">{date}</p>
+        </div>
         <p className="text-sm text-[#FDFDFD] text-justify">{description}</p>
 
         <div
