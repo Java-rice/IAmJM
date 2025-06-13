@@ -19,6 +19,7 @@ const projectData = [
     gif: null,
     video: "",
     component: <ISchedApp />,
+    date: "July, 2022"
   },
   // {
   //   title: "Weather App",

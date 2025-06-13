@@ -3,14 +3,14 @@ const ExperienceData = {
     {
       role: "Frontend Developer (Freelance)",
       organization: "The Oscar's Real Estate and Property Management",
-      duration: "Jan 2024 - Apr 2024",
+      duration: "February 2025 - Present",
       description:
        "Designed, develop and deployed document generation website."
     },
     {
       role: "Frontend Developer (Part-time)",
       organization: "8box Inc.",
-      duration: "Jun 2023 - Present",
+      duration: "October 2024 - February 2025",
       description:
         "Designed and deployed modern websites for small businesses using modern web stacks.",
     },
@@ -24,14 +24,14 @@ const ExperienceData = {
   ],
   organizations: [
     {
-      name: "Test Organization",
+      name: "The Programmer's Guild",
       role: "Member",
-      duration: "2022 - Present",
+      duration: "2022 - 2024",
     },
     {
-      name: "Test Organization",
-      role: "UI/UX Lead",
-      duration: "2023 - Present",
+      name: "Google Developer Student Clubs - PUP",
+      role: "SME",
+      duration: "2023 - 2024",
     },
   ],
   education: [

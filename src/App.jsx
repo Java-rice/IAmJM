@@ -1,10 +1,14 @@
 import React from "react";
 import "@src/App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Name from "@src/components/logo/Name";
 import Footer from "@src/components/footer/Footer";
-import Content from "@src/pages/Content"; 
+import Content from "@src/pages/Content";
 
 // Pages
 import Home from "@src/pages/Home";
@@ -14,10 +18,9 @@ import ProjectDetails from "@src/pages/ProjectDetails";
 import Blogs from "@src/pages/Blogs";
 import BlogDetails from "@src/pages/BlogDetails";
 import Contacts from "@src/pages/Contacts";
-import NotFound from "@src/pages/NotFound"; 
+import NotFound from "@src/pages/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 function App() {
   return (
