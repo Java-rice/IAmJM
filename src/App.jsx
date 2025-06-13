@@ -6,7 +6,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/next";
 import Name from "@src/components/logo/Name";
 import Footer from "@src/components/footer/Footer";
 import Content from "@src/pages/Content";
@@ -44,7 +43,6 @@ function App() {
         </Routes>
       </Router>
       <Footer />
-      <Analytics />
       {/* Toast container is placed here to make it accessible globally */}
       <ToastContainer
         position="top-right"
