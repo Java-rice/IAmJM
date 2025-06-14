@@ -1,6 +1,7 @@
 import WeatherApp from "@src/contents/projects/WeatherApp";
 import TodoApp from "@src/contents/projects/TodoApp";
 import ISchedApp from "@src/contents/projects/ISchedApp";
+
 const slugify = (title) =>
   "/projects/" +
   title
@@ -14,12 +15,19 @@ const projectData = [
     description:
       "I-SCHED is a simple scheduling system developed by BSCS 2-5 students of PUP that automates job scheduling using Earliest Deadline First, Merge Sort, and the Fractional Knapsack algorithm. It efficiently organizes tasks based on deadlines, idle time, and importance through a user-friendly interface that allows real-time input, tracking, and adjustment.",
     categories: ["Desktop App", "Productivity"],
-    images: ["./projects/isched/Isched_1.png", "path_to_weather2.jpg"],
+    images: [
+      "./projects/isched/Isched_1.png",
+      "./projects/isched/Isched_2.png",
+      "./projects/isched/Isched_3.png",
+      "./projects/isched/Isched_4.png",
+      "./projects/isched/Isched_5.png",
+      "./projects/isched/Isched_6.png",
+    ],
     toolsUsed: ["Python", "Tkinter"],
     gif: null,
     video: "",
     component: <ISchedApp />,
-    date: "July, 2022"
+    date: "July, 2022",
   },
   // {
   //   title: "Weather App",
