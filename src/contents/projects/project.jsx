@@ -1,6 +1,9 @@
 import LivingTrust from "@src/contents/projects/LivingTrust";
 import ISchedApp from "@src/contents/projects/ISchedApp";
 import UwiShii from "@src/contents/projects/UwiShii";
+import FiloTravel from "@src/contents/projects/FiloTravel";
+import EthicsFlashcard from "@src/contents/projects/EthicsFlashcard";
+import Thesis from "@src/contents/projects/Thesis";
 
 const slugify = (title) =>
   "/projects/" +
@@ -38,6 +41,75 @@ const projectData = [
     live: "https://the-most-comprehensive-living-trust.vercel.app/",
   },
   {
+    title: "Ethics Flashcard",
+    description:
+      "Ethics Flashcard is a creative React-based presentation tool that explores workplace ethics through interactive flashcards and slide for effective learning.",
+    categories: ["Web Application", "Game", "Presentation"],
+    images: [
+      "./projects/ethics/ethics_0.png",
+      "./projects/ethics/ethics_1.png",
+      // "./projects/ethics/ethics_2.png",
+      "./projects/ethics/ethics_3.png",
+      "./projects/ethics/ethics_4.png",
+      "./projects/ethics/ethics_5.png",
+      "./projects/ethics/ethics_6.png",
+    ],
+    toolsUsed: ["React", "TailwindCSS", "JavaScript"],
+    gif: null,
+    video: "",
+    component: <EthicsFlashcard />,
+    date: "March 2025",
+    repository: "https://github.com/Java-rice/flashcard-presentation",
+    live: "https://flashcard-presentation.vercel.app/",
+  },
+  {
+    title: "SC-β-VAE-GAN: Shift Correction VAE-GAN for Handwriting Time Series",
+    description:
+      "SC-β-VAE-GAN is a Python-based desktop application that imputes and augments handwriting time series data using a shift-corrected VAE-GAN architecture, designed for researchers and machine learning practitioners.",
+    categories: ["Desktop App", "AI/ML", "Handwriting Analysis"],
+    images: [
+      "./projects/thesis/thesis_0.png",
+      "./projects/thesis/thesis_1.png",
+      "./projects/thesis/thesis_2.png",
+      "./projects/thesis/thesis_3.png",
+      "./projects/thesis/thesis_4.png",
+      "./projects/thesis/thesis_5.png",
+      "./projects/thesis/thesis_6.png",
+      "./projects/thesis/thesis_7.png",
+      "./projects/thesis/thesis_8.png",
+    ],
+    toolsUsed: ["Python", "TensorFlow", "Keras", "PyQt5"],
+    gif: null,
+    video: "",
+    component: <Thesis />,
+    repository: "https://github.com/Java-rice/Thesis-Project",
+    date: "March–May 2025",
+  },
+  {
+    title: "Filo-Travel",
+    description:
+      "Filo Travel is a React website that shows popular Philippine travel spots using animations, carousels, videos, and responsive design, aimed at both exploration and learning.",
+    categories: ["Website", "Tourist"],
+    images: [
+      "./projects/filotravel/filotravel_0.png",
+      "./projects/filotravel/filotravel_1.png",
+      "./projects/filotravel/filotravel_2.png",
+      "./projects/filotravel/filotravel_3.png",
+      "./projects/filotravel/filotravel_4.png",
+      "./projects/filotravel/filotravel_5.png",
+      "./projects/filotravel/filotravel_6.png",
+      "./projects/filotravel/filotravel_7.png",
+      "./projects/filotravel/filotravel_8.png",
+    ],
+    toolsUsed: ["React", "CSS"],
+    gif: null,
+    video: "",
+    component: <FiloTravel />,
+    date: "May 2024",
+    repository: "https://github.com/Java-rice/filo-travel",
+    live: "https://filo-travel-lyart.vercel.app/",
+  },
+  {
     title: "UWISHII: Crave, Create and Enjoy",
     description:
       "UWI-SHI is a Django-based e-commerce site where users can register, customize bento meals, and order them with ease, created as a final project for an E-Commerce course.",
@@ -56,9 +128,10 @@ const projectData = [
     gif: null,
     video: "",
     component: <UwiShii />,
-    date: "July 2024 - August 2023",
+    date: "July 2023 - August 2023",
     repository: "https://github.com/Java-rice/UWISHI-bentobox-website",
   },
+
   {
     title: "I-SCHED",
     description:

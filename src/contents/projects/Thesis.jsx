@@ -3,29 +3,25 @@ import {
   Wrench,
   LayoutDashboard,
   Users,
-  Link,
-  Github,
   GalleryHorizontal,
   PanelRight,
+  Link,
+  Github,
 } from "lucide-react";
 
 const images = [
-  "./projects/living_trust/living_0.png",
-  "./projects/living_trust/living_1.png",
-  "./projects/living_trust/living_2.png",
-  "./projects/living_trust/living_3.png",
-  "./projects/living_trust/living_4.png",
-  "./projects/living_trust/living_5.png",
-  "./projects/living_trust/living_6.png",
-  "./projects/living_trust/living_7.png",
-  "./projects/living_trust/living_8.png",
-  "./projects/living_trust/living_9.png",
-  "./projects/living_trust/living_10.png",
-  "./projects/living_trust/living_11.png",
-  "./projects/living_trust/living_12.png",
+  "./projects/thesis/thesis_0.png",
+  "./projects/thesis/thesis_1.png",
+  "./projects/thesis/thesis_2.png",
+  "./projects/thesis/thesis_3.png",
+  "./projects/thesis/thesis_4.png",
+  "./projects/thesis/thesis_5.png",
+  "./projects/thesis/thesis_6.png",
+  "./projects/thesis/thesis_7.png",
+  "./projects/thesis/thesis_8.png",
 ];
 
-const LivingTrust = () => {
+const Thesis = () => {
   const [viewMode, setViewMode] = useState("carousel");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
@@ -38,25 +34,30 @@ const LivingTrust = () => {
   return (
     <>
       <div className="space-y-8 text-on-primary bg-background p-6 rounded-lg shadow-md">
-        {/* Title */}
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-primary text-center">
-            Living Trust Management System
+            SC-β-VAE-GAN — Shift Correction Model for Handwriting Time Series
           </h2>
-          <h2 className="text-lg font-bold text-center">February, 2022 - Present</h2>
+          <h2 className="text-lg font-bold text-center">
+            COSC 40033 - CS Thesis Writing 2
+          </h2>
+          <h2 className="text-lg font-bold text-center">March–May 2025</h2>
         </div>
 
-        {/* Description */}
         <p className="text-base leading-relaxed text-justify indent-8">
-          The Living Trust Management System is a web-based document automation
-          platform designed to generate U.S. living trust documents through
-          guided form inputs. It supports multiple user roles including clients,
-          trust ambassadors, estate planning coordinators and legacy leaders,
-          streamlining estate planning workflows from input to document
-          generation and review.
+          SC-β-VAE-GAN is a Python-based standalone desktop tool designed to
+          impute and augment handwriting multivariate time series data.
+          Leveraging a shift correction variational autoencoder with GAN
+          integration, this system addresses data scarcity and missing values in
+          online handwriting datasets. It supports pen tablet input and dataset
+          uploads, generating realistic synthetic samples and filling in-air pen
+          movements. Designed for machine learning practitioners, graphologists,
+          and researchers, the app includes modules for data visualization,
+          local file tracking, and custom model training using Keras and
+          TensorFlow. It was developed using the Rapid Application Development
+          paradigm.
         </p>
 
-        {/* View Toggle */}
         <div className="flex justify-end gap-2">
           <button
             className={`flex items-center gap-1 px-3 py-1 rounded text-sm ${
@@ -80,7 +81,6 @@ const LivingTrust = () => {
           </button>
         </div>
 
-        {/* Image Display */}
         {viewMode === "carousel" ? (
           <div className="relative w-full max-w-4xl mx-auto">
             <img
@@ -122,82 +122,73 @@ const LivingTrust = () => {
           </div>
         )}
 
-        {/* Tools & Technologies */}
-        <div>
-          <div className="flex items-center gap-2 mb-2 text-primary">
-            <Wrench size={20} />
-            <h3 className="text-xl font-semibold">Tools & Technologies Used</h3>
-          </div>
-          <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>React.js, Node.js, Express</li>
-            <li>MySQL for relational data</li>
-            <li>Form generation, Word document templating (docx)</li>
-            <li>Tailwind CSS, Axios, React Hook Form</li>
-            <li>Git, Github</li>
-            <li>Wordpress, PhpMyAdmin,</li>
-          </ul>
-        </div>
-
-        {/* Key Features */}
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <LayoutDashboard size={20} />
             <h3 className="text-xl font-semibold">Key Features</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Dynamic form system for legal documents</li>
-            <li>Document generation in Word and PDF formats</li>
-            <li>
-              Multi-role account handling (Clients, Trust Ambassadors, Estate
-              Planning Coordinators and Legacy Leaders,)
-            </li>
-            <li>Document vault for uploads and digital records</li>
-            <li>Integrated calendar, notes, and lead referrals</li>
+            <li>Drawing canvas with support for pen tablet input</li>
+            <li>Augmentation and imputation using SC-β-VAE-GAN</li>
+            <li>Dataset upload and real-time process logging</li>
+            <li>Visualization of original and synthetic handwriting data</li>
+            <li>Custom model training and evaluation metrics</li>
           </ul>
         </div>
 
-        {/* Project Team */}
+        <div>
+          <div className="flex items-center gap-2 mb-2 text-primary">
+            <Wrench size={20} />
+            <h3 className="text-xl font-semibold">Tools & Technologies Used</h3>
+          </div>
+          <ul className="list-disc list-inside ml-4 text-on-primary">
+            <li>Python</li>
+            <li>Keras & TensorFlow</li>
+            <li>PyQt5</li>
+            <li>NumPy, Pandas, Scikit-learn</li>
+            <li>Matplotlib</li>
+          </ul>
+        </div>
+
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Users size={20} />
-            <h3 className="text-xl font-semibold">My Role</h3>
+            <h3 className="text-xl font-semibold">Project Team</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>UI Designer</li>
-            <li>Frontend Developer</li>
-            <li>API Integration</li>
+            <li>John Mark Peroche</li>
+            <li>Nichole Alpapara</li>
+            <li>John Patrick Lagatuz</li>
+            <li>Kurt Denver Torreda</li>
           </ul>
         </div>
 
-        {/* Links */}
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Link size={20} />
-            <h3 className="text-xl font-semibold">Live View</h3>
+            <h3 className="text-xl font-semibold">Source Code</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
             <li className="flex items-center gap-2">
-              <Link size={16} className="text-primary" />
+              <Github size={16} className="text-primary" />
               <a
-                href="https://the-most-comprehensive-living-trust.vercel.app/" // Replace with actual repo
+                href="https://github.com/Java-rice/Thesis-Project"
                 className="underline text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://the-most-comprehensive-living-trust.vercel.app/
+                https://github.com/Java-rice/Thesis-Project
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Footer */}
         <p className="text-center text-sm text-gray pt-6 border-t border-surface">
-          Built to streamline the U.S. estate planning process through guided
-          automation and legal document preparation.
+          Developed for COSC 40033 - CS Thesis Writing 2 , requirement for
+          Bachelor of Science in Computer Science
         </p>
       </div>
 
-      {/* Image Preview Modal */}
       {previewImage && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
           <div className="relative max-w-4xl w-full px-4">
@@ -219,4 +210,4 @@ const LivingTrust = () => {
   );
 };
 
-export default LivingTrust;
+export default Thesis;
