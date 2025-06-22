@@ -1,5 +1,6 @@
 import LivingTrust from "@src/contents/projects/LivingTrust";
 import ISchedApp from "@src/contents/projects/ISchedApp";
+import UwiShii from "@src/contents/projects/UwiShii";
 
 const slugify = (title) =>
   "/projects/" +
@@ -37,7 +38,7 @@ const projectData = [
     live: "https://the-most-comprehensive-living-trust.vercel.app/",
   },
   {
-    title: "I-SCHED",
+    title: "UWISHII: Crave, Create and Enjoy",
     description:
       "I-SCHED is a Python desktop app that uses smart algorithms like EDF and Knapsack to auto-schedule tasks based on deadlines and importance.",
     categories: ["Desktop App", "Productivity"],
@@ -51,6 +52,29 @@ const projectData = [
       "./projects/isched/Isched_6.png",
       "./projects/isched/Isched_7.png",
       "./projects/isched/Isched_8.png",
+    ],
+    toolsUsed: ["Python", "Tkinter"],
+    gif: null,
+    video: "",
+    component: <UwiShii />,
+    date: "July, 2022",
+    repository: "https://github.com/Java-rice/UWISHI-bentobox-website",
+  },
+  {
+    title: "I-SCHED",
+    description:
+      "I-SCHED is a Python desktop app that uses smart algorithms like EDF and Knapsack to auto-schedule tasks based on deadlines and importance.",
+    categories: ["Desktop App", "Productivity"],
+    images: [
+      "./projects/uwishii/Uwishii_0.png",
+      "./projects/uwishii/Uwishii_1.png",
+      "./projects/uwishii/Uwishii_2.png",
+      "./projects/uwishii/Uwishii_3.png",
+      "./projects/uwishii/Uwishii_4.png",
+      "./projects/uwishii/Uwishii_5.png",
+      "./projects/uwishii/Uwishii_6.png",
+      "./projects/uwishii/Uwishii_7.png",
+      "./projects/uwishii/Uwishii_8.png",
     ],
     toolsUsed: ["Python", "Tkinter"],
     gif: null,

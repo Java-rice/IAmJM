@@ -102,7 +102,7 @@ const Home = () => {
   return (
     <div className="font-rubik text-white bg-[#1E2329]">
       {/* HERO SECTION */}
-      <section className="px-6 md:px-[10%] py-24 grid lg:grid-cols-12 items-center gap-12">
+      <section className="px-6 md:px-[10%] pt-16 pb-8 grid lg:grid-cols-12 items-center gap-12">
         <motion.div
           className="lg:col-span-5 text-center lg:text-left flex flex-col gap-6"
           initial="hidden"
