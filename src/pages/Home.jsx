@@ -117,7 +117,7 @@ const Home = () => {
             John Mark
           </h1>
           <p className="text-base md:text-lg leading-relaxed text-gray-200">
-            A third-year{" "}
+            A graduating{" "}
             <span className="text-[#F5B301] font-medium">Computer Science</span>{" "}
             student at <span className="text-[#F5B301] font-medium">PUP</span>,
             building digital experiences with logic and purpose.

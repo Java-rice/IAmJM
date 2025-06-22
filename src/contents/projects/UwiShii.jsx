@@ -10,10 +10,14 @@ import {
 } from "lucide-react";
 
 const images = [
-  "./projects/uwishii/home.png",
-  "./projects/uwishii/add_to_cart.png",
-  "./projects/uwishii/review_cart.png",
-  "./projects/uwishii/about.png", // match actual filenames
+  "./projects/uwishii/uwishii_0.png",
+  "./projects/uwishii/uwishii_1.png",
+  "./projects/uwishii/uwishii_2.png",
+  "./projects/uwishii/uwishii_3.png",
+  "./projects/uwishii/uwishii_4.png",
+  "./projects/uwishii/uwishii_5.png",
+  "./projects/uwishii/uwishii_6.png",
+  "./projects/uwishii/uwishii_7.png",
 ];
 
 const UwiShii = () => {
@@ -37,14 +41,21 @@ const UwiShii = () => {
           <h2 className="text-lg font-bold text-center">
             COSC-FE2: CS Free Elective 2 (E-Commerce)
           </h2>
+          <h2 className="text-lg font-bold text-center">
+            July 2024 - August 2023
+          </h2>
         </div>
 
         {/* Description */}
         <p className="text-base leading-relaxed text-justify indent-8">
-          UWI-SHI is a Django-powered e-commerce platform designed to bring the
-          fun and personalization of bento box creation to your fingertips.
-          Customers can register, log in, customize their bento, and order
-          seamlessly through a delightful and intuitive user experience.
+          UWI-SHI is an e-commerce website built with Django for a bento-box
+          restaurant theme, where users can sign up, customize their own meals,
+          and place orders easily. Developed as the final project for COSC-FE2
+          (E-Commerce), it features a smooth ordering experience—from browsing
+          pages and editing carts to receiving email confirmations. The platform
+          uses SQLite for its database and Bootstrap for styling, and was built
+          through collaboration between developers handling both design and
+          backend features.
         </p>
 
         {/* View Toggle */}

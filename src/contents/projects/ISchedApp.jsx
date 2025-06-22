@@ -39,6 +39,9 @@ const ISchedApp = () => {
           <h2 className="text-3xl font-bold text-primary text-center">
             I-SCHED
           </h2>
+          <h2 className="text-lg font-bold text-center">
+            COSC 30033 - Design and Analysis of Algorithms
+          </h2>
           <h2 className="text-lg font-bold text-center">July, 2022</h2>
         </div>
         {/* Description */}
