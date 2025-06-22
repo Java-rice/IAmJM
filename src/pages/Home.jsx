@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* TECH STACK */}
-      <section className="px-6 md:px-[10%] py-20 text-center">
+      <section className="px-6 md:px-[10%] py-8 text-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -184,7 +184,7 @@ const Home = () => {
               </h4>
               <ul className="space-y-2 text-gray-300">
                 <li>Node.js</li>
-                <li>MongoDB, Firebase</li>
+                <li>MongoDB, MySQL</li>
                 <li>Git</li>
               </ul>
             </div>
@@ -216,7 +216,7 @@ const Home = () => {
           <h3 className="text-3xl font-semibold text-[#F5B301] mb-4">
             Featured Projects
           </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             A quick look at some apps I've crafted — with focus on design,
             usability, and real-world application.
           </p>
