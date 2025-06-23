@@ -4,28 +4,22 @@ import {
   LayoutDashboard,
   Users,
   Link,
-  Github,
   GalleryHorizontal,
   PanelRight,
 } from "lucide-react";
 
 const images = [
-  "./projects/living_trust/living_0.png",
-  "./projects/living_trust/living_1.png",
-  "./projects/living_trust/living_2.png",
-  "./projects/living_trust/living_3.png",
-  "./projects/living_trust/living_4.png",
-  "./projects/living_trust/living_5.png",
-  "./projects/living_trust/living_6.png",
-  "./projects/living_trust/living_7.png",
-  "./projects/living_trust/living_8.png",
-  "./projects/living_trust/living_9.png",
-  "./projects/living_trust/living_10.png",
-  "./projects/living_trust/living_11.png",
-  "./projects/living_trust/living_12.png",
+  "./projects/komyusagip/komyusagip_0.png",
+  "./projects/komyusagip/komyusagip_1.png",
+  "./projects/komyusagip/komyusagip_2.png",
+  "./projects/komyusagip/komyusagip_3.png",
+  "./projects/komyusagip/komyusagip_4.png",
+  "./projects/komyusagip/komyusagip_5.png",
+  "./projects/komyusagip/komyusagip_6.png",
+  "./projects/komyusagip/komyusagip_7.png",
 ];
 
-const LivingTrust = () => {
+const KomyuSagip = () => {
   const [viewMode, setViewMode] = useState("carousel");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
@@ -41,21 +35,22 @@ const LivingTrust = () => {
         {/* Title */}
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-primary text-center">
-            Living Trust Management System
+            KOMYU-SAGIP
           </h2>
           <h2 className="text-lg font-bold text-center">
-            February, 2025 - Present
+            COMP 20133 - Applications Development and Emerging Technologies
           </h2>
+          <h2 className="text-lg font-bold text-center">February, 2024</h2>
         </div>
 
         {/* Description */}
         <p className="text-base leading-relaxed text-justify indent-8">
-          The Living Trust Management System is a web-based document automation
-          platform designed to generate U.S. living trust documents through
-          guided form inputs. It supports multiple user roles including clients,
-          trust ambassadors, estate planning coordinators and legacy leaders,
-          streamlining estate planning workflows from input to document
-          generation and review.
+          Komyu-Sagip is a mobile application designed for community crime
+          reporting and public awareness. It aims to empower users to report
+          incidents, send SOS messages, and access local crime statistics.
+          Inspired by GSM and GIS-based systems, the app leverages the
+          widespread use of smartphones in the Philippines to promote a safer
+          and more informed society.
         </p>
 
         {/* View Toggle */}
@@ -131,12 +126,11 @@ const LivingTrust = () => {
             <h3 className="text-xl font-semibold">Tools & Technologies Used</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>React.js, Node.js, Express</li>
-            <li>MySQL for relational data</li>
-            <li>Form generation, Word document templating (docx)</li>
-            <li>Tailwind CSS, Axios, React Hook Form</li>
-            <li>Git, Github</li>
-            <li>Wordpress, PhpMyAdmin,</li>
+            <li>Java, Kotlin</li>
+            <li>Firebase (Authentication, Realtime DB)</li>
+            <li>Android Studio</li>
+            <li>Git & GitHub</li>
+            <li>Figma (UI/UX Design)</li>
           </ul>
         </div>
 
@@ -147,45 +141,45 @@ const LivingTrust = () => {
             <h3 className="text-xl font-semibold">Key Features</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Dynamic form system for legal documents</li>
-            <li>Document generation in Word and PDF formats</li>
-            <li>
-              Multi-role account handling (Clients, Trust Ambassadors, Estate
-              Planning Coordinators and Legacy Leaders,)
-            </li>
-            <li>Document vault for uploads and digital records</li>
-            <li>Integrated calendar, notes, and lead referrals</li>
+            <li>User login and registration</li>
+            <li>Crime reporting with optional media</li>
+            <li>Community posting and local updates</li>
+            <li>“Panic!” mode: Send instant SOS alerts</li>
+            <li>Real-time crime statistics display</li>
+            <li>Customizable user profiles</li>
+            <li>Emergency contact directory</li>
           </ul>
         </div>
 
-        {/* Project Team */}
+        {/* My Role */}
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Users size={20} />
             <h3 className="text-xl font-semibold">My Role</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>UI Designer</li>
-            <li>Frontend Developer</li>
-            <li>API Integration</li>
+            <li>Android Developer</li>
+            <li>UI/UX Design and Prototyping</li>
+            <li>Firebase Authentication and Realtime Database Setup</li>
           </ul>
         </div>
 
+        {/* Live Link (if applicable) */}
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Link size={20} />
-            <h3 className="text-xl font-semibold">Source Code</h3>
+            <h3 className="text-xl font-semibold">Repository</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
             <li className="flex items-center gap-2">
-              <Github size={16} className="text-primary" />
+              <Link size={16} className="text-primary" />
               <a
-                href="https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application"
-                className="underline text-primary"
+                href="https://github.com/your-repo-url-here"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline text-primary"
               >
-                https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application
+                GitHub – Komyu-Sagip
               </a>
             </li>
           </ul>
@@ -193,8 +187,8 @@ const LivingTrust = () => {
 
         {/* Footer */}
         <p className="text-center text-sm text-gray pt-6 border-t border-surface">
-          Built to streamline the U.S. estate planning process through guided
-          automation and legal document preparation.
+          Empowering communities with timely reporting and information –
+          KOMYU-SAGIP. A requirement for COMP 20133 - Applications Development and Emerging Technologies
         </p>
       </div>
 
@@ -220,4 +214,4 @@ const LivingTrust = () => {
   );
 };
 
-export default LivingTrust;
+export default KomyuSagip;
