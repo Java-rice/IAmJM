@@ -4,7 +4,7 @@ import UwiShii from "@src/contents/projects/UwiShii";
 import FiloTravel from "@src/contents/projects/FiloTravel";
 import EthicsFlashcard from "@src/contents/projects/EthicsFlashcard";
 import Thesis from "@src/contents/projects/Thesis";
-
+import KomyuSagip from "@src/contents/projects/KomyuSagip";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -108,6 +108,35 @@ const projectData = [
     date: "May 2024",
     repository: "https://github.com/Java-rice/filo-travel",
     live: "https://filo-travel-lyart.vercel.app/",
+  },
+  {
+    title: "KOMYU-SAGIP: Community Crime Reporting App",
+    description:
+      "KOMYU-SAGIP is a mobile application designed to promote safety and awareness by allowing users to report crimes, post updates, and send SOS alerts within their communities. Developed by BSCS 3-3 Group 4, it is a public safety app tailored for Filipino communities.",
+    categories: ["Mobile App", "Community", "Safety"],
+    images: [
+      "./projects/komyusagip/komyusagip_0.png",
+      "./projects/komyusagip/komyusagip_1.png",
+      "./projects/komyusagip/komyusagip_2.png",
+      "./projects/komyusagip/komyusagip_3.png",
+      "./projects/komyusagip/komyusagip_4.png",
+      "./projects/komyusagip/komyusagip_5.png",
+      "./projects/komyusagip/komyusagip_6.png",
+      "./projects/komyusagip/komyusagip_7.png",
+    ],
+    toolsUsed: [
+      "Java",
+      "Kotlin",
+      "Firebase",
+      "Android Studio",
+      "Figma",
+      "GitHub",
+    ],
+    gif: null,
+    video: "",
+    component: <KomyuSagip />,
+    date: "February, 2024",
+    repository: "https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application", 
   },
   {
     title: "UWISHII: Crave, Create and Enjoy",
