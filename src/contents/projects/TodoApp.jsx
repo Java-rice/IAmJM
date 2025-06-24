@@ -12,6 +12,8 @@ const images = [
   "./projects/todo/todo_0.png",
   "./projects/todo/todo_1.png",
   "./projects/todo/todo_2.png",
+  "./projects/todo/todo_3.png",
+  "./projects/todo/todo_4.png",
 ];
 
 const ToDoApp = () => {
