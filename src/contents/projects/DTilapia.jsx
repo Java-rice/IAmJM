@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import {
   Wrench,
   LayoutDashboard,
-  Link,
-  Github,
+  Users,
   GalleryHorizontal,
   PanelRight,
+  Link,
+  Github,
 } from "lucide-react";
 
 const images = [
-  "./projects/todo/todo_0.png",
-  "./projects/todo/todo_1.png",
-  "./projects/todo/todo_2.png",
+  "./projects/dtilapia/dtilapia_0.png",
+  "./projects/dtilapia/dtilapia_1.png",
+  "./projects/dtilapia/dtilapia_2.png",
 ];
 
-const ToDoApp = () => {
+const DTilapia = () => {
   const [viewMode, setViewMode] = useState("carousel");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
@@ -28,17 +29,23 @@ const ToDoApp = () => {
     <>
       <div className="space-y-8 text-on-primary bg-background p-6 rounded-lg shadow-md">
         <div className="space-y-2">
-          <h2 className="text-3xl font-bold text-primary text-center">Quick To Do App</h2>
-          <h2 className="text-lg font-bold text-center">React Task Management</h2>
-          <h2 className="text-lg font-bold text-center">August, 2024</h2>
+          <h2 className="text-3xl font-bold text-primary text-center">
+            D'TILAPIA
+          </h2>
+          <h2 className="text-lg font-bold text-center">
+            COSC 30063 - Principles of Programming Languages
+          </h2>
+          <h2 className="text-lg font-bold text-center">February, 2024</h2>
         </div>
 
         <p className="text-base leading-relaxed text-justify indent-8">
-          Quick To Do is a minimalist task management web app built using React.
-          It allows users to create, track, and manage tasks efficiently.
-          Tasks can be marked as complete, deleted, or cleared in bulk,
-          with localStorage used for persistence. The app includes date pickers,
-          responsive styling, and a clean user experience for personal productivity.
+          D'TILAPIA is a domain-specific programming language created to support
+          problem-solving in Discrete Mathematics. Implemented using Python,
+          Flask, JavaScript, and HTML/CSS, it provides an educational platform
+          for students and researchers. It features a custom syntax structure
+          that mirrors formal mathematical notation and supports operations like
+          set theory, permutations, graphs, and number properties, bridging the
+          gap between logic theory and actual coding.
         </p>
 
         <div className="flex justify-end gap-2">
@@ -73,13 +80,19 @@ const ToDoApp = () => {
               onClick={() => setPreviewImage(images[currentSlide])}
             />
             <div className="flex justify-between mt-2">
-              <button onClick={handlePrev} className="text-primary hover:underline text-sm">
+              <button
+                onClick={handlePrev}
+                className="text-primary hover:underline text-sm"
+              >
                 ‹ Prev
               </button>
               <span className="text-sm text-on-primary">
                 {currentSlide + 1} / {images.length}
               </span>
-              <button onClick={handleNext} className="text-primary hover:underline text-sm">
+              <button
+                onClick={handleNext}
+                className="text-primary hover:underline text-sm"
+              >
                 Next ›
               </button>
             </div>
@@ -105,48 +118,70 @@ const ToDoApp = () => {
             <h3 className="text-xl font-semibold">Key Features</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Add tasks with title, description, and deadline</li>
-            <li>Mark tasks as done or undone</li>
-            <li>Delete individual tasks</li>
-            <li>Mark all as done or clear all tasks</li>
-            <li>Data persists via localStorage</li>
+            <li>Custom language syntax for discrete math operations</li>
+            <li>Web-based interpreter using Flask and HTML/CSS</li>
+            <li>
+              Supports operations like set theory, trees, graphs, and
+              permutations
+            </li>
+            <li>Beginner-friendly grammar and rule-based parsing</li>
+            <li>
+              Ideal for students studying programming languages or math logic
+            </li>
           </ul>
         </div>
 
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Wrench size={20} />
-            <h3 className="text-xl font-semibold">Technologies Used</h3>
+            <h3 className="text-xl font-semibold">Tools & Technologies Used</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>React</li>
-            <li>Bootstrap</li>
-            <li>Git and Github</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Vanilla DOM Parsing</li>
+            <li>Git, Github</li>
+          </ul>
+        </div>
+
+        <div>
+          <div className="flex items-center gap-2 mb-2 text-primary">
+            <Users size={20} />
+            <h3 className="text-xl font-semibold">Developers</h3>
+          </div>
+          <ul className="list-disc list-inside ml-4 text-on-primary">
+            <li>Nichole Alpapara</li>
+            <li>Danielle Karl Ibao</li>
+            <li>John Patrick Lagatuz</li>
+            <li>John Mark Peroche</li>
+            <li>Kurt Denver Torreda</li>
           </ul>
         </div>
 
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Link size={20} />
-            <h3 className="text-xl font-semibold">Live Site</h3>
+            <h3 className="text-xl font-semibold">Source Code</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
             <li className="flex items-center gap-2">
-              <Link size={16} className="text-primary" />
+              <Github size={16} className="text-primary" />
               <a
-                href="https://lm-todoapp.vercel.app/"
+                href="https://github.com/Java-rice/Dtilapia"
                 className="underline text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://lm-todoapp.vercel.app/
+                https://github.com/Java-rice/Dtilapia
               </a>
             </li>
           </ul>
         </div>
 
         <p className="text-center text-sm text-gray pt-6 border-t border-surface">
-          A lightweight productivity tool made for those who love simplicity and speed when managing tasks.
+          D'TILAPIA merges formal logic and custom parsing to help students code
+          math-driven logic fluently and accessibly. A requirement for COSC 30063 - Principles of Programming Languages
         </p>
       </div>
 
@@ -171,4 +206,4 @@ const ToDoApp = () => {
   );
 };
 
-export default ToDoApp;
+export default DTilapia;

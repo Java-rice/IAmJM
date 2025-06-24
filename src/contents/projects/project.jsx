@@ -5,6 +5,9 @@ import FiloTravel from "@src/contents/projects/FiloTravel";
 import EthicsFlashcard from "@src/contents/projects/EthicsFlashcard";
 import Thesis from "@src/contents/projects/Thesis";
 import KomyuSagip from "@src/contents/projects/KomyuSagip";
+import DTilapia from "@src/contents/projects/DTilapia";
+import DoorMe from "@src/contents/projects/DoorMe";
+import ToDoApp from "@src/contents/projects/ToDoApp";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -86,6 +89,53 @@ const projectData = [
     date: "March–May 2025",
   },
   {
+  title: "Quick To Do App",
+  description:
+    "Quick To Do is a simple and efficient React-based task management application. It features task creation with deadlines, toggleable completion status, and persistent localStorage. The user interface is styled with React Bootstrap and supports clearing and marking all tasks in bulk.",
+  categories: ["Web Application", "Productivity", "Task Manager"],
+  images: [
+    "./projects/todo/todo_0.png",
+    "./projects/todo/todo_1.png",
+    "./projects/todo/todo_2.png",
+    "./projects/todo/todo_3.png",
+    "./projects/todo/todo_4.png",
+  ],
+  toolsUsed: [
+    "React",
+    "Bootstrap",
+    "Git",
+    "Github"
+  ],
+  gif: null,
+  video: "",
+  component: <ToDoApp />,
+  date: "August, 2024",
+  repository: "https://github.com/Java-rice/Quick-Todo-App", 
+  live: "https://lm-todoapp.vercel.app/",
+},
+  {
+    title: "DOORME: Dormitory Search Platform",
+    description:
+      "DOORME: is a web-based housing search platform designed to help college students in Metro Manila find safe, affordable, and verified dormitories. It includes features such as an interactive map, price comparisons, availability alerts, verification systems, chat, and document uploads. Built for convenience and security, the platform empowers students to find accommodations that suit their academic life.",
+    categories: ["Web Application", "Student Housing", "Map-Based Search"],
+    images: [
+      "./projects/doorme/doorme_0.png",
+      "./projects/doorme/doorme_1.png",
+      "./projects/doorme/doorme_2.png",
+      "./projects/doorme/doorme_3.png",
+      "./projects/doorme/doorme_4.png",
+      "./projects/doorme/doorme_5.png",
+      "./projects/doorme/doorme_6.png",
+      "./projects/doorme/doorme_7.png",
+    ],
+    toolsUsed: ["React", "TailwindCSS", "Google Maps API", "SQLite"],
+    gif: null,
+    video: "",
+    component: <DoorMe />,
+    date: "July, 2024",
+    repository: "https://github.com/Java-rice/doorme",
+  },
+  {
     title: "Filo-Travel",
     description:
       "Filo Travel is a React website that shows popular Philippine travel spots using animations, carousels, videos, and responsive design, aimed at both exploration and learning.",
@@ -108,6 +158,23 @@ const projectData = [
     date: "May 2024",
     repository: "https://github.com/Java-rice/filo-travel",
     live: "https://filo-travel-lyart.vercel.app/",
+  },
+  {
+    title: "D'TILAPIA: Discrete Technologies & Innovative Language",
+    description:
+      "D'TILAPIA is a custom-designed programming language tailored for Discrete Mathematics. It serves as both a syntax framework and web-based interpreter to help users solve problems in graph theory, set operations, functions, number theory, and more. Developed using Python, Flask, JavaScript, HTML, and CSS, this tool aims to bridge abstract math concepts and code execution with an accessible syntax and live feedback.",
+    categories: ["Custom Language", "Discrete Math", "Web App", "Education"],
+    images: [
+      "./projects/dtilapia/dtilapia_0.png",
+      "./projects/dtilapia/dtilapia_1.png",
+      "./projects/dtilapia/dtilapia_2.png",
+    ],
+    toolsUsed: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+    gif: null,
+    video: "",
+    component: <DTilapia />,
+    date: "February, 2025",
+    repository: "https://github.com/Java-rice/Dtilapia",
   },
   {
     title: "KOMYU-SAGIP: Community Crime Reporting App",
@@ -136,7 +203,7 @@ const projectData = [
     video: "",
     component: <KomyuSagip />,
     date: "February, 2024",
-    repository: "https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application", 
+    repository: "https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application",
   },
   {
     title: "UWISHII: Crave, Create and Enjoy",
