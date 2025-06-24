@@ -2,6 +2,7 @@ const logoFixes = {
   VSCode: "visualstudiocode",
   Java: "openjdk",
   Windows: "windows",
+  MySQL: "mysql",
 };
 
 const generateShieldsBadge = (title, color) => {
@@ -90,6 +91,13 @@ const tools = {
       title: "SQLite",
       imgSrc: generateShieldsBadge("SQLite", "#FBE59E"),
       color: "#FBE59E",
+      text_color: "#1E2329",
+      projects: [],
+    },
+    {
+      title: "MySQL",
+      imgSrc: generateShieldsBadge("MySQL", "#FADBA0"),
+      color: "#FADBA0",
       text_color: "#1E2329",
       projects: [],
     },
