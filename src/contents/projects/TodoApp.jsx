@@ -1,110 +1,174 @@
-// src/components/projects/TodoApp.jsx
-import React from "react";
+import React, { useState } from "react";
+import {
+  Wrench,
+  LayoutDashboard,
+  Link,
+  Github,
+  GalleryHorizontal,
+  PanelRight,
+} from "lucide-react";
 
-const TodoApp = () => {
+const images = [
+  "./projects/todo/todo_0.png",
+  "./projects/todo/todo_1.png",
+  "./projects/todo/todo_2.png",
+];
+
+const ToDoApp = () => {
+  const [viewMode, setViewMode] = useState("carousel");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [previewImage, setPreviewImage] = useState(null);
+
+  const handleNext = () =>
+    setCurrentSlide((prev) => (prev + 1) % images.length);
+  const handlePrev = () =>
+    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
+
   return (
-    <div className="space-y-6 text-[#FDFDFD]">
-      {/* Title */}
-      <h2 className="text-3xl font-bold text-[#F5B301] text-center">To-Do App</h2>
+    <>
+      <div className="space-y-8 text-on-primary bg-background p-6 rounded-lg shadow-md">
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold text-primary text-center">Quick To Do App</h2>
+          <h2 className="text-lg font-bold text-center">React Task Management</h2>
+          <h2 className="text-lg font-bold text-center">August, 2024</h2>
+        </div>
 
-      {/* Introduction */}
-      <p className="text-base leading-relaxed text-justify indent-8">
-        This To-Do App is a clean, intuitive task manager that helps users stay productive by tracking
-        daily tasks, goals, and reminders. Designed with simplicity in mind, the app supports adding,
-        editing, and deleting tasks with real-time UI feedback. Whether you're managing work tasks or
-        planning a grocery list, the app makes organization seamless and enjoyable.
-      </p>
+        <p className="text-base leading-relaxed text-justify indent-8">
+          Quick To Do is a minimalist task management web app built using React.
+          It allows users to create, track, and manage tasks efficiently.
+          Tasks can be marked as complete, deleted, or cleared in bulk,
+          with localStorage used for persistence. The app includes date pickers,
+          responsive styling, and a clean user experience for personal productivity.
+        </p>
 
-      {/* Cover Image / GIF */}
-      <img
-        src="/assets/todo_demo.gif"
-        alt="To-Do App Demo"
-        className="w-full max-w-3xl mx-auto rounded-lg shadow-md"
-      />
+        <div className="flex justify-end gap-2">
+          <button
+            className={`flex items-center gap-1 px-3 py-1 rounded text-sm ${
+              viewMode === "carousel"
+                ? "bg-primary text-on-primary"
+                : "bg-surface text-on-primary"
+            }`}
+            onClick={() => setViewMode("carousel")}
+          >
+            <PanelRight size={16} /> Carousel
+          </button>
+          <button
+            className={`flex items-center gap-1 px-3 py-1 rounded text-sm ${
+              viewMode === "grid"
+                ? "bg-primary text-on-primary"
+                : "bg-surface text-on-primary"
+            }`}
+            onClick={() => setViewMode("grid")}
+          >
+            <GalleryHorizontal size={16} /> Grid
+          </button>
+        </div>
 
-      {/* Tools Section */}
-      <div>
-        <h3 className="text-xl font-semibold text-[#F5B301] mb-2">🛠 Tools & Technologies Used</h3>
-        <ul className="list-disc list-inside ml-4">
-          <li>React.js</li>
-          <li>Tailwind CSS</li>
-          <li>LocalStorage for persistence</li>
-          <li>Framer Motion for subtle animations</li>
-        </ul>
-      </div>
+        {viewMode === "carousel" ? (
+          <div className="relative w-full max-w-4xl mx-auto">
+            <img
+              src={images[currentSlide]}
+              alt={`Screenshot ${currentSlide + 1}`}
+              className="w-full h-auto rounded-lg shadow-md cursor-pointer"
+              onClick={() => setPreviewImage(images[currentSlide])}
+            />
+            <div className="flex justify-between mt-2">
+              <button onClick={handlePrev} className="text-primary hover:underline text-sm">
+                ‹ Prev
+              </button>
+              <span className="text-sm text-on-primary">
+                {currentSlide + 1} / {images.length}
+              </span>
+              <button onClick={handleNext} className="text-primary hover:underline text-sm">
+                Next ›
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {images.map((src, index) => (
+              <div key={index} className="relative group">
+                <img
+                  src={src}
+                  alt={`Screenshot ${index + 1}`}
+                  className="w-full h-auto rounded-lg shadow-md cursor-pointer"
+                  onClick={() => setPreviewImage(src)}
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
-      {/* Features Section */}
-      <div>
-        <h3 className="text-xl font-semibold text-[#F5B301] mb-2">✨ Key Features</h3>
-        <ul className="list-disc list-inside ml-4">
-          <li>Add, edit, complete, and delete tasks</li>
-          <li>Task filtering (All, Active, Completed)</li>
-          <li>Auto-save with LocalStorage</li>
-          <li>Responsive design for all devices</li>
-          <li>Smooth UI animations and hover effects</li>
-        </ul>
-      </div>
+        <div>
+          <div className="flex items-center gap-2 mb-2 text-primary">
+            <LayoutDashboard size={20} />
+            <h3 className="text-xl font-semibold">Key Features</h3>
+          </div>
+          <ul className="list-disc list-inside ml-4 text-on-primary">
+            <li>Add tasks with title, description, and deadline</li>
+            <li>Mark tasks as done or undone</li>
+            <li>Delete individual tasks</li>
+            <li>Mark all as done or clear all tasks</li>
+            <li>Data persists via localStorage</li>
+          </ul>
+        </div>
 
-      {/* Collaboration Section */}
-      <div>
-        <h3 className="text-xl font-semibold text-[#F5B301] mb-2">🤝 Collaboration</h3>
-        <p className="text-justify indent-8">
-          This app was built as a solo side project to explore advanced state management techniques in React.
-          It is currently open for contributions—features like dark mode, calendar integration, and user auth
-          are welcome improvements!
+        <div>
+          <div className="flex items-center gap-2 mb-2 text-primary">
+            <Wrench size={20} />
+            <h3 className="text-xl font-semibold">Technologies Used</h3>
+          </div>
+          <ul className="list-disc list-inside ml-4 text-on-primary">
+            <li>React</li>
+            <li>Bootstrap</li>
+            <li>Git and Github</li>
+          </ul>
+        </div>
+
+        <div>
+          <div className="flex items-center gap-2 mb-2 text-primary">
+            <Link size={20} />
+            <h3 className="text-xl font-semibold">Live Site</h3>
+          </div>
+          <ul className="list-disc list-inside ml-4 text-on-primary">
+            <li className="flex items-center gap-2">
+              <Link size={16} className="text-primary" />
+              <a
+                href="https://lm-todoapp.vercel.app/"
+                className="underline text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://lm-todoapp.vercel.app/
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <p className="text-center text-sm text-gray pt-6 border-t border-surface">
+          A lightweight productivity tool made for those who love simplicity and speed when managing tasks.
         </p>
       </div>
 
-      {/* Video Section */}
-      <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-[#F5B301] mb-2">🎬 Walkthrough Demo</h3>
-        <div className="aspect-video">
-          <iframe
-            className="w-full h-full rounded-md shadow-md"
-            src="https://www.youtube.com/embed/sample_todo_app_demo"
-            title="To-Do App Demo"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+      {previewImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <div className="relative max-w-4xl w-full px-4">
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-2 right-8 text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
+            >
+              ✕
+            </button>
+            <img
+              src={previewImage}
+              alt="Preview"
+              className="w-full h-auto rounded-lg shadow-lg max-h-[90vh] object-contain"
+            />
+          </div>
         </div>
-      </div>
-
-      {/* Links Section */}
-      <div>
-        <h3 className="text-xl font-semibold text-[#F5B301] mb-2">🔗 Live Demo & Source Code</h3>
-        <ul className="list-disc list-inside ml-4">
-          <li>
-            🌐 Live App:{" "}
-            <a
-              href="https://todo-app.example.com"
-              className="text-[#F5B301] underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://todo-app.example.com
-            </a>
-          </li>
-          <li>
-            💻 GitHub Repo:{" "}
-            <a
-              href="https://github.com/yourusername/todo-app"
-              className="text-[#F5B301] underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/yourusername/todo-app
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Footer Signature */}
-      <p className="text-center text-sm text-gray-400 pt-4">
-        Designed for daily clarity by <span className="text-[#F5B301] font-medium">Your Name</span>
-      </p>
-    </div>
+      )}
+    </>
   );
 };
 
-export default TodoApp;
+export default ToDoApp;

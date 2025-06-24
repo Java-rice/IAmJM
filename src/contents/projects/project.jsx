@@ -7,6 +7,7 @@ import Thesis from "@src/contents/projects/Thesis";
 import KomyuSagip from "@src/contents/projects/KomyuSagip";
 import DTilapia from "@src/contents/projects/DTilapia";
 import DoorMe from "@src/contents/projects/DoorMe";
+import ToDoApp from "@src/contents/projects/ToDoApp";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -87,6 +88,31 @@ const projectData = [
     repository: "https://github.com/Java-rice/Thesis-Project",
     date: "March–May 2025",
   },
+  {
+  title: "Quick To Do App",
+  description:
+    "Quick To Do is a simple and efficient React-based task management application. It features task creation with deadlines, toggleable completion status, and persistent localStorage. The user interface is styled with React Bootstrap and supports clearing and marking all tasks in bulk.",
+  categories: ["Web Application", "Productivity", "Task Manager"],
+  images: [
+    "./projects/todo/todo_0.png",
+    "./projects/todo/todo_1.png",
+    "./projects/todo/todo_2.png",
+    "./projects/todo/todo_3.png",
+    "./projects/todo/todo_4.png",
+  ],
+  toolsUsed: [
+    "React",
+    "Bootstrap",
+    "Git",
+    "Github"
+  ],
+  gif: null,
+  video: "",
+  component: <ToDoApp />,
+  date: "August, 2024",
+  repository: "https://github.com/Java-rice/Quick-Todo-App", 
+  live: "https://lm-todoapp.vercel.app/",
+},
   {
     title: "DOORME: Dormitory Search Platform",
     description:
