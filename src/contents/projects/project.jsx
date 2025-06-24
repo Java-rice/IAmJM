@@ -5,6 +5,7 @@ import FiloTravel from "@src/contents/projects/FiloTravel";
 import EthicsFlashcard from "@src/contents/projects/EthicsFlashcard";
 import Thesis from "@src/contents/projects/Thesis";
 import KomyuSagip from "@src/contents/projects/KomyuSagip";
+import DoorMe from "./DoorMe";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -86,6 +87,28 @@ const projectData = [
     date: "March–May 2025",
   },
   {
+    title: "DOORME: Dormitory Search Platform",
+    description:
+      "DOORME: is a web-based housing search platform designed to help college students in Metro Manila find safe, affordable, and verified dormitories. It includes features such as an interactive map, price comparisons, availability alerts, verification systems, chat, and document uploads. Built for convenience and security, the platform empowers students to find accommodations that suit their academic life.",
+    categories: ["Web Application", "Student Housing", "Map-Based Search"],
+    images: [
+      "./projects/doorme/doorme_0.png",
+      "./projects/doorme/doorme_1.png",
+      "./projects/doorme/doorme_2.png",
+      "./projects/doorme/doorme_3.png",
+      "./projects/doorme/doorme_4.png",
+      "./projects/doorme/doorme_5.png",
+      "./projects/doorme/doorme_6.png",
+      "./projects/doorme/doorme_7.png",
+    ],
+    toolsUsed: ["React", "TailwindCSS", "Google Maps API", "SQLite"],
+    gif: null,
+    video: "",
+    component: <DoorMe />,
+    date: "July, 2024",
+    repository: "https://github.com/Java-rice/doorme",
+  },
+  {
     title: "Filo-Travel",
     description:
       "Filo Travel is a React website that shows popular Philippine travel spots using animations, carousels, videos, and responsive design, aimed at both exploration and learning.",
@@ -136,7 +159,7 @@ const projectData = [
     video: "",
     component: <KomyuSagip />,
     date: "February, 2024",
-    repository: "https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application", 
+    repository: "https://github.com/Java-rice/KOMYU-SAGIP-Mobile-Application",
   },
   {
     title: "UWISHII: Crave, Create and Enjoy",
