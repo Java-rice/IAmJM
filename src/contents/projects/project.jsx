@@ -5,7 +5,8 @@ import FiloTravel from "@src/contents/projects/FiloTravel";
 import EthicsFlashcard from "@src/contents/projects/EthicsFlashcard";
 import Thesis from "@src/contents/projects/Thesis";
 import KomyuSagip from "@src/contents/projects/KomyuSagip";
-import DoorMe from "./DoorMe";
+import DTilapia from "@src/contents/projects/DTilapia";
+import DoorMe from "@src/contents/projects/DoorMe";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -131,6 +132,23 @@ const projectData = [
     date: "May 2024",
     repository: "https://github.com/Java-rice/filo-travel",
     live: "https://filo-travel-lyart.vercel.app/",
+  },
+  {
+    title: "D'TILAPIA: Discrete Technologies & Innovative Language",
+    description:
+      "D'TILAPIA is a custom-designed programming language tailored for Discrete Mathematics. It serves as both a syntax framework and web-based interpreter to help users solve problems in graph theory, set operations, functions, number theory, and more. Developed using Python, Flask, JavaScript, HTML, and CSS, this tool aims to bridge abstract math concepts and code execution with an accessible syntax and live feedback.",
+    categories: ["Custom Language", "Discrete Math", "Web App", "Education"],
+    images: [
+      "./projects/dtilapia/dtilapia_0.png",
+      "./projects/dtilapia/dtilapia_1.png",
+      "./projects/dtilapia/dtilapia_2.png",
+    ],
+    toolsUsed: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+    gif: null,
+    video: "",
+    component: <DTilapia />,
+    date: "February, 2025",
+    repository: "https://github.com/Java-rice/Dtilapia",
   },
   {
     title: "KOMYU-SAGIP: Community Crime Reporting App",
