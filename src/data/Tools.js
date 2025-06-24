@@ -2,6 +2,7 @@ const logoFixes = {
   VSCode: "visualstudiocode",
   Java: "openjdk",
   Windows: "windows",
+  MySQL: "mysql",
 };
 
 const generateShieldsBadge = (title, color) => {
@@ -19,19 +20,14 @@ const tools = {
       imgSrc: generateShieldsBadge("React", "#F5E5A8"),
       color: "#F5E5A8",
       text_color: "#1E2329",
-      projects: [
-        { title: "Portfolio Website", link: "https://yourportfolio.example.com" },
-        { title: "MERN Blog Platform", link: "https://github.com/Java-rice/mern-blog-platform" },
-      ],
+      projects: [],
     },
     {
       title: "JavaScript",
       imgSrc: generateShieldsBadge("JavaScript", "#F6D365"),
       color: "#F6D365",
       text_color: "#1E2329",
-      projects: [
-        { title: "Task Manager App", link: "https://github.com/Java-rice/task-manager" },
-      ],
+      projects: [],
     },
     {
       title: "HTML5",
@@ -52,9 +48,7 @@ const tools = {
       imgSrc: generateShieldsBadge("TailwindCSS", "#FAE29C"),
       color: "#FAE29C",
       text_color: "#1E2329",
-      projects: [
-        { title: "Responsive Landing Page", link: "https://codepen.io/Java-rice/full/example123" },
-      ],
+      projects: [],
     },
     {
       title: "Bootstrap",
@@ -77,9 +71,7 @@ const tools = {
       imgSrc: generateShieldsBadge("Node.js", "#F7D288"),
       color: "#F7D288",
       text_color: "#1E2329",
-      projects: [
-        { title: "MERN Blog Platform", link: "https://github.com/Java-rice/mern-blog-platform" },
-      ],
+      projects: [],
     },
     {
       title: "Git",
@@ -99,6 +91,13 @@ const tools = {
       title: "SQLite",
       imgSrc: generateShieldsBadge("SQLite", "#FBE59E"),
       color: "#FBE59E",
+      text_color: "#1E2329",
+      projects: [],
+    },
+    {
+      title: "MySQL",
+      imgSrc: generateShieldsBadge("MySQL", "#FADBA0"),
+      color: "#FADBA0",
       text_color: "#1E2329",
       projects: [],
     },

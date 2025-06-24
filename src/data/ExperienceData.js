@@ -5,21 +5,21 @@ const ExperienceData = {
       organization: "The Oscar's Real Estate and Property Management",
       duration: "February 2025 - Present",
       description:
-       "Designed, develop and deployed document generation website."
+        "Designed and built a responsive real estate platform for a foreign market using React, Tailwind, and WordPress, generating $3,000+ in early revenue. Led the full design process in Figma and optimized performance, accessibility, and mobile usability. Tech: React, TypeScript, Tailwind, WordPress, Git, Figma.",
     },
     {
       role: "Frontend Developer (Part-time)",
       organization: "8box Inc.",
       duration: "October 2024 - February 2025",
       description:
-        "Designed and deployed modern websites for small businesses using modern web stacks.",
+        "Led frontend for a PC timer system and Airbnb-style rental platform using React, Tailwind, and REST APIs. Focused on routing, reusable components, and UI performance. Tech: React, TypeScript, Tailwind, Postman, Git, GitHub, Axios, Vite, Figma.",
     },
     {
       role: "Frontend Developer Intern",
       organization: "LexMeet Inc.",
       duration: "July 2024 - September 2024",
       description:
-        "Assigned to work on a team projects to develop the LexMeet website using ReactJS, enhancing both functionality and user experience.",
+        "Built internal pages using React and CSS, and contributed to layout and component design. Gained experience with Docker basics, Git, and team-based workflows. Tech: React, CSS, Docker, Git, Gitlab, Figma, VS Code, Chrome DevTools.",
     },
   ],
   organizations: [
