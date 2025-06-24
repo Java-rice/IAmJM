@@ -8,6 +8,7 @@ import KomyuSagip from "@src/contents/projects/KomyuSagip";
 import DTilapia from "@src/contents/projects/DTilapia";
 import DoorMe from "@src/contents/projects/DoorMe";
 import ToDoApp from "@src/contents/projects/ToDoApp";
+
 const slugify = (title) =>
   "/projects/" +
   title
