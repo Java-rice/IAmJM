@@ -164,6 +164,8 @@ const Contacts = () => {
             </p>
           </div>
 
+           <h4 className="mb-2">You can contact me here: <b>09532146587</b> | <b>09195437979</b> | <b>perochejmp@gmail.com</b></h4>
+
           <div className="mt-4">
             <h4 className="text-[#F5B301] font-semibold mb-2">You can also find me here:</h4>
             <div className="flex flex-wrap gap-4 mt-2">

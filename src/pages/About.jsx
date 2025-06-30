@@ -85,7 +85,7 @@ const About = () => {
                   />
                 </div>
                 <span className="text-[#1E2329] font-bold text-base pr-4">
-                  View My CV
+                  View My Resume
                 </span>
               </div>
             </Button>
