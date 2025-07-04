@@ -2,8 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import ProjectCards from "@src/components/cards/ProjectCards";
 import projectData from "@src/contents/projects/project";
 import { Button } from "@src/components/button/Button";
-import { FolderSearch, ArrowLeft } from "lucide-react";
-
+import {
+  FolderSearch,
+  ArrowLeft,
+  ArrowRightToLine,
+  ArrowLeftToLine,
+} from "lucide-react";
 const viewOptions = ["grid", "list", "carousel"];
 const allCategories = [
   "All",
@@ -25,14 +29,17 @@ const Projects = () => {
 
   const selectedProject = projectData.find((p) => p.link === activeProjectSlug);
 
-
   const scrollToIndex = (index) => {
     const container = carouselRef.current;
     if (!container) return;
 
-    const slide = container.children[index + 1]; 
+    const slide = container.children[index + 1];
     if (slide) {
-      slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      slide.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
       setActiveIndex(index);
     }
   };
@@ -50,7 +57,7 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    scrollToIndex(0); 
+    scrollToIndex(0);
   }, []);
 
   useEffect(() => {
@@ -124,26 +131,26 @@ const Projects = () => {
               <button
                 onClick={goToPrevious}
                 disabled={activeIndex === 0}
-                className={`absolute left-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-r-lg p-2 ${
+                className={`absolute left-0 bg-white text-black font-bold top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-lg p-2 ${
                   activeIndex === 0
-                    ? "opacity-30 cursor-not-allowed"
+                    ? "opacity-40 cursor-not-allowed"
                     : "opacity-70 hover:opacity-100"
                 }`}
               >
-                ←
+                <ArrowLeftToLine />
               </button>
 
               {/* Right Arrow */}
               <button
                 onClick={goToNext}
                 disabled={activeIndex === filteredProjects.length - 1}
-                className={`absolute right-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-l-lg p-2 ${
+                className={`absolute bg-[#F5B301] text-white font-bold right-0 top-1/2 z-10 transform -translate-y-1/2 bg-[#1E2329]/80 text-white rounded-lg p-2 ${
                   activeIndex === filteredProjects.length - 1
-                    ? "opacity-30 cursor-not-allowed"
+                    ? "opacity-40 cursor-not-allowed"
                     : "opacity-70 hover:opacity-100"
                 }`}
               >
-                →
+                <ArrowRightToLine />
               </button>
 
               {/* Scrollable Carousel */}
