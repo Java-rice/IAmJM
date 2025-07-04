@@ -7,15 +7,12 @@ import {
   PanelRight,
   Link,
   Github,
+  ExternalLink,
 } from "lucide-react";
 
-const images = [
-  "./projects/dtilapia/dtilapia_0.png",
-  "./projects/dtilapia/dtilapia_1.png",
-  "./projects/dtilapia/dtilapia_2.png",
-];
+const images = ["./projects/tictactoe/tictactoe_0.png"];
 
-const DTilapia = () => {
+const TicTacToe = () => {
   const [viewMode, setViewMode] = useState("carousel");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
@@ -30,22 +27,17 @@ const DTilapia = () => {
       <div className="space-y-8 text-on-primary bg-background p-6 rounded-lg shadow-md">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold text-primary text-center">
-            D'TILAPIA
+            Simple Tic-Tac-Toe
           </h2>
-          <h2 className="text-lg font-bold text-center">
-            COSC 30063 - Principles of Programming Languages
-          </h2>
-          <h2 className="text-lg font-bold text-center">February, 2024</h2>
+          <h2 className="text-lg font-bold text-center">July, 2025</h2>
         </div>
 
         <p className="text-base leading-relaxed text-justify indent-8">
-          D'TILAPIA is a domain-specific programming language created to support
-          problem-solving in Discrete Mathematics. Implemented using Python,
-          Flask, JavaScript, and HTML/CSS, it provides an educational platform
-          for students and researchers. It features a custom syntax structure
-          that mirrors formal mathematical notation and supports operations like
-          set theory, permutations, graphs, and number properties, bridging the
-          gap between logic theory and actual coding.
+          Simple Tic-Tac-Toe is a lightweight web-based game built with Next.js
+          and Tailwind CSS. It offers a smooth, dark-themed interface with
+          responsive design and round-based play. Players take turns placing Xs
+          and Os on a 3×3 grid, with built-in detection for wins or draws, and a
+          quick board reset option to start fresh.
         </p>
 
         <div className="flex justify-end gap-2">
@@ -115,19 +107,14 @@ const DTilapia = () => {
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <LayoutDashboard size={20} />
-            <h3 className="text-xl font-semibold">Key Features</h3>
+            <h3 className="text-xl font-semibold">Game Features</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Custom language syntax for discrete math operations</li>
-            <li>Web-based interpreter using Flask and HTML/CSS</li>
-            <li>
-              Supports operations like set theory, trees, graphs, and
-              permutations
-            </li>
-            <li>Beginner-friendly grammar and rule-based parsing</li>
-            <li>
-              Ideal for students studying programming languages or math logic
-            </li>
+            <li>3×3 Tic-Tac-Toe gameplay with turn switching</li>
+            <li>Win and draw detection logic</li>
+            <li>Dark theme with responsive layout</li>
+            <li>Round-based play with scoreboard</li>
+            <li>Reset button to restart the game anytime</li>
           </ul>
         </div>
 
@@ -137,52 +124,57 @@ const DTilapia = () => {
             <h3 className="text-xl font-semibold">Tools & Technologies Used</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Python</li>
-            <li>Flask</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Vanilla DOM Parsing</li>
-            <li>Git, Github</li>
+            <li>Next.js</li>
+            <li>Tailwind CSS</li>
+            <li>ShadCN (JS)</li>
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Users size={20} />
-            <h3 className="text-xl font-semibold">Developers</h3>
+            <h3 className="text-xl font-semibold">Developer</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
-            <li>Nichole Alpapara</li>
-            <li>Danielle Karl Ibao</li>
-            <li>John Patrick Lagatuz</li>
             <li>John Mark Peroche</li>
-            <li>Kurt Denver Torreda</li>
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <div className="flex items-center gap-2 mb-2 text-primary">
             <Link size={20} />
-            <h3 className="text-xl font-semibold">Source Code</h3>
+            <h3 className="text-xl font-semibold">Links</h3>
           </div>
           <ul className="list-disc list-inside ml-4 text-on-primary">
             <li className="flex items-center gap-2">
-              <Github size={16} className="text-primary" />
+              <ExternalLink size={16} className="text-primary" />
               <a
-                href="https://github.com/Java-rice/Dtilapia"
+                href="https://tictactoev1-m8fv.vercel.app/"
                 className="underline text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://github.com/Java-rice/Dtilapia
+                Live Demo
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Github size={16} className="text-primary" />
+              <a
+                href="https://github.com/Java-rice/tictactoev1"
+                className="underline text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
               </a>
             </li>
           </ul>
         </div>
 
         <p className="text-center text-sm text-gray pt-6 border-t border-surface">
-          D'TILAPIA merges formal logic and custom parsing to help students code
-          math-driven logic fluently and accessibly. A requirement for COSC
-          30063 - Principles of Programming Languages
+          Simple Tic-Tac-Toe was built for practice and experimentation with
+          Next.js and component logic. It demonstrates how classic games can be
+          implemented with modern tools.
         </p>
       </div>
 
@@ -207,4 +199,4 @@ const DTilapia = () => {
   );
 };
 
-export default DTilapia;
+export default TicTacToe;

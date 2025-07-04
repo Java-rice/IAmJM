@@ -7,7 +7,8 @@ import Thesis from "@src/contents/projects/Thesis";
 import KomyuSagip from "@src/contents/projects/KomyuSagip";
 import DTilapia from "@src/contents/projects/DTilapia";
 import DoorMe from "@src/contents/projects/DoorMe";
-import Todo from "@src/contents/projects/Todo"
+import Todo from "@src/contents/projects/Todo";
+import TicTacToe from "./TicTacToe";
 const slugify = (title) =>
   "/projects/" +
   title
@@ -20,7 +21,7 @@ const projectData = [
     title: "Living Trust Management System",
     description:
       "Living Trust Management System is a document automation platform that helps generate U.S. living trust documents through guided forms and multi-role workflow support.",
-    categories: ["Web Application", "Real Estate", "Document Generation"],
+    categories: ["Web Application", "Real Estate"],
     images: [
       "./projects/living_trust/living_0.png",
       "./projects/living_trust/living_1.png",
@@ -44,10 +45,24 @@ const projectData = [
     live: "https://the-most-comprehensive-living-trust.vercel.app/",
   },
   {
+    title: "Simple Tic-Tac-Toe",
+    description:
+      "Simple Tic-Tac-Toe is a modern, browser-based game built with Next.js, Tailwind CSS, and ShadCN UI components. It features a clean dark-themed interface, responsive design, and round-based gameplay. Players can take turns marking Xs and Os in a 3x3 grid, with automatic win detection and the ability to reset the board for a new game.",
+    categories: ["Practice Project"],
+    images: ["./projects/tictactoe/tictactoe_0.png"],
+    toolsUsed: ["ShadCN", "Tailwind", "Next.js"],
+    gif: null,
+    video: "",
+    component: <TicTacToe />,
+    date: "July 3, 2025",
+    live: "https://tictactoev1-m8fv.vercel.app/",
+    repository: "https://github.com/Java-rice/tictactoev1",
+  },
+  {
     title: "Ethics Flashcard",
     description:
       "Ethics Flashcard is a creative React-based presentation tool that explores workplace ethics through interactive flashcards and slide for effective learning.",
-    categories: ["Web Application", "Game", "Presentation"],
+    categories: ["Web Application", "Presentation"],
     images: [
       "./projects/ethics/ethics_0.png",
       "./projects/ethics/ethics_1.png",
@@ -69,7 +84,7 @@ const projectData = [
     title: "SC-β-VAE-GAN: Shift Correction VAE-GAN for Handwriting Time Series",
     description:
       "SC-β-VAE-GAN is a Python-based desktop application that imputes and augments handwriting time series data using a shift-corrected VAE-GAN architecture, designed for researchers and machine learning practitioners.",
-    categories: ["Desktop App", "AI/ML", "Handwriting Analysis"],
+    categories: ["Desktop App", "Handwriting Analysis"],
     images: [
       "./projects/thesis/thesis_0.png",
       "./projects/thesis/thesis_1.png",
@@ -92,7 +107,7 @@ const projectData = [
     title: "Quick To Do App",
     description:
       "Quick To Do is a simple and efficient React-based task management application. It features task creation with deadlines, toggleable completion status, and persistent localStorage. The user interface is styled with React Bootstrap and supports clearing and marking all tasks in bulk.",
-    categories: ["Web Application", "Productivity", "Task Manager"],
+    categories: ["Practice Activity"],
     images: [
       "./projects/todo/todo_0.png",
       "./projects/todo/todo_1.png",
@@ -112,7 +127,7 @@ const projectData = [
     title: "DOORME: Dormitory Search Platform",
     description:
       "DOORME: is a web-based housing search platform designed to help college students in Metro Manila find safe, affordable, and verified dormitories. It includes features such as an interactive map, price comparisons, availability alerts, verification systems, chat, and document uploads. Built for convenience and security, the platform empowers students to find accommodations that suit their academic life.",
-    categories: ["Web Application", "Student Housing", "Map-Based Search"],
+    categories: ["Web Application", "House Finder"],
     images: [
       "./projects/doorme/doorme_0.png",
       "./projects/doorme/doorme_1.png",
@@ -158,7 +173,7 @@ const projectData = [
     title: "D'TILAPIA: Discrete Technologies & Innovative Language",
     description:
       "D'TILAPIA is a custom-designed programming language tailored for Discrete Mathematics. It serves as both a syntax framework and web-based interpreter to help users solve problems in graph theory, set operations, functions, number theory, and more. Developed using Python, Flask, JavaScript, HTML, and CSS, this tool aims to bridge abstract math concepts and code execution with an accessible syntax and live feedback.",
-    categories: ["Custom Language", "Discrete Math", "Web App", "Education"],
+    categories: ["Desktop Application", "Programming Language"],
     images: [
       "./projects/dtilapia/dtilapia_0.png",
       "./projects/dtilapia/dtilapia_1.png",
@@ -175,7 +190,7 @@ const projectData = [
     title: "KOMYU-SAGIP: Community Crime Reporting App",
     description:
       "KOMYU-SAGIP is a mobile application designed to promote safety and awareness by allowing users to report crimes, post updates, and send SOS alerts within their communities. Developed by BSCS 3-3 Group 4, it is a public safety app tailored for Filipino communities.",
-    categories: ["Mobile App", "Community", "Safety"],
+    categories: ["Mobile Application", "Community and Safety"],
     images: [
       "./projects/komyusagip/komyusagip_0.png",
       "./projects/komyusagip/komyusagip_1.png",
@@ -204,7 +219,7 @@ const projectData = [
     title: "UWISHII: Crave, Create and Enjoy",
     description:
       "UWI-SHI is a Django-based e-commerce site where users can register, customize bento meals, and order them with ease, created as a final project for an E-Commerce course.",
-    categories: ["Web Application", "Food", "Commerce"],
+    categories: ["Web Application", "E-Commerce"],
     images: [
       "./projects/uwishii/uwishii_0.png",
       "./projects/uwishii/uwishii_1.png",
@@ -227,7 +242,7 @@ const projectData = [
     title: "I-SCHED",
     description:
       "I-SCHED is a Python desktop app that uses smart algorithms like EDF and Knapsack to auto-schedule tasks based on deadlines and importance.",
-    categories: ["Desktop App", "Productivity"],
+    categories: ["Desktop Application", "Productivity"],
     images: [
       "./projects/isched/Isched_0.png",
       "./projects/isched/Isched_1.png",
